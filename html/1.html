@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" style="display: block;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content1">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-remove"></i></span>
+                </button>
+            </div>
+            <div class="modal-body"><script src="/assets/854b3818/jquery.js"></script>
+                <script src="/assets/e9c47be4/yii.js"></script>
+                <h4 class="text-center">登录</h4>
+
+                <form id="" class="loginAjaxForm" action="/index/ajax-login" method="post">
+                    <input type="hidden" name="_csrf" value="YWtNamhVeE44KBknCT41NA84Jl1bHU8PIBoSUlEkD3g5OCEkORdMPg==">
+                    <div class="form-group field-loginform-email required">
+
+                        <input type="text" id="loginform-email" class="form-control" name="LoginForm[email]" placeholder="邮箱地址">
+
+                        <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="form-group field-loginform-password required">
+
+                        <input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" placeholder="登录密码">
+
+                        <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="form-group field-loginform-rememberme">
+                        <div class="checkbox">
+                            <label for="loginform-rememberme">
+                                <input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1">
+                                记住我
+                            </label>
+                            <p class="help-block help-block-error"></p>
+
+                        </div>
+                    </div>    <div class="clearfix">
+                    <button type="submit" class="sw-btn btn-block sw-btn-big sw-btn-default submit">登 录</button>        <div class="text-right" style="float: right; width: 40%;">
+                    <div><a href="/signup">立即免费注册</a></div>
+                    <div><a href="/forgot-password">忘记密码</a></div>
+                </div>
+                </div>
+
+                </form>
+                <hr>
+                <div class="third-party">
+                    <a href="">无需注册，您可以用社交帐号登录</a>
+                    <a href="/user/oauth/weibo" class="btn btn-default btn-sm btn-sn-weibo" data-toggle="tooltip" data-placement="bottom" title="微博账号">
+                        <span class="icon-sn-weibo"></span>
+                        <strong class="visible-xs-inline">微博账号</strong>
+                    </a>
+                    <a href="/user/oauth/qq" class="btn btn-default btn-sm btn-sn-qq" data-toggle="tooltip" data-placement="bottom" title="QQ账号">
+                        <span class="icon-sn-qq"></span>
+                        <strong class="visible-xs-inline">QQ账号</strong>
+                    </a>
+                    <a href="/user/oauth/wechat" class="btn btn-default btn-sm btn-sn-wechat" data-toggle="tooltip" data-placement="bottom" title="微信账号">
+                        <span class="icon-sn-wechat"></span>
+                        <strong class="visible-xs-inline">微信账号</strong>
+                    </a>
+                </div>
+                <script src="/assets/e9c47be4/yii.validation.js"></script>
+                <script src="/assets/e9c47be4/yii.activeForm.js"></script>
+                <script type="text/javascript">jQuery('#w0').yiiActiveForm([{"id":"loginform-email","name":"email","container":".field-loginform-email","input":"#loginform-email","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"邮箱地址不能为空。"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"邮箱地址不是有效的邮箱地址。","enableIDN":false,"skipOnEmpty":1});}},{"id":"loginform-password","name":"password","container":".field-loginform-password","input":"#loginform-password","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"登录密码不能为空。"});}}], []);
+                $(function () {
+                    $('form.loginAjaxForm').on('submit', function (e) {
+                        var form = $(this);
+
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: 'post',
+                            data: form.serialize(),
+                            success: function (response) {
+                                $('#loginModal .modal-body').html(response);
+                            }
+                        });
+
+                        return false;
+                    });
+                });</script></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signupModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-remove"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="modal fade in" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" style="display: block;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-remove"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <link href="/assets/bccf1ad8/css/select2.min.css" rel="stylesheet">
+                <link href="/assets/bccf1ad8/css/select2-addl.min.css" rel="stylesheet">
+                <link href="/assets/bccf1ad8/css/select2-krajee.min.css" rel="stylesheet">
+                <link href="/assets/f663f008/css/kv-widgets.min.css" rel="stylesheet">
+                <script src="/assets/854b3818/jquery.js"></script>
+                <script src="/assets/e9c47be4/yii.js"></script>
+                <script type="text/javascript">var s2options_c4acac00 = {"themeCss":".select2-container--krajee","sizeCss":"","doReset":true,"doToggle":true,"doOrder":false};
+                var select2_daf2e7eb = {"allowClear":true,"enableLabel":false,"theme":"krajee","width":"100%","placeholder":"摄影风格","language":"zh-CN"};
+                </script>
+                <style>
+                    .modal-content{
+                        width: 598px;
+                        height: 750px;
+                        border: 1px solid #FFFFFF;
+                    }
+                    .select2-container--krajee .select2-selection--multiple {
+                        min-height: 50px;
+                    }
+                    .select2-container--krajee .select2-selection {
+                        box-shadow: none;
+                        background-color: #fff;
+                        border: 2px solid #e9e9e9;
+                        border-radius: 3px;
+                        color: #555555;
+                        font-size: 14px;
+                        outline: 0;
+                    }
+                    .select2-container--krajee .select2-selection--multiple .select2-selection__rendered {
+                        padding: 6px 0;
+                    }
+                    .select2-container--krajee .select2-selection--multiple .select2-selection__choice {
+                        color: #ffffff;
+                        background: #8fd6c8;
+                        border: 1px solid #8fd6c8;
+                        border-radius: 4px;
+                        cursor: default;
+                        float: left;
+                        margin: 5px 0 0 6px;
+                        padding: 0 6px;
+                    }
+                    .select2-container--krajee .select2-selection--multiple .select2-selection__choice__remove {
+                        color: #fff;
+                    }
+                </style>
+
+                <h4 class="text-center">创建账号</h4>
+
+                <form id="w0" class="signupAjaxForm" action="/index/ajax-signup" method="post">
+                    <input type="hidden" name="_csrf" value="LTg1d2Viell0e2E6BAk3I0NrXkBWKk0YbElqT1wTDW91a1k5NCBOKQ==">
+                    <div class="form-group field-signupform-email required">
+
+                        <input type="text" id="signupform-email" class="form-control" name="SignupForm[email]" placeholder="邮箱地址">
+
+                        <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="form-group field-signupform-username required">
+
+                        <input type="text" id="signupform-username" class="form-control" name="SignupForm[username]" placeholder="用户名">
+
+                        <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="form-group field-signupform-password required">
+
+                        <input type="password" id="signupform-password" class="form-control" name="SignupForm[password]" placeholder="登录密码">
+
+                        <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="form-group field-signupform-user_type required">
+
+                        <div>
+                            <input type="hidden" name="SignupForm[user_type]" value=""><div id="signupform-user_type"><label class="radio-inline"><input type="radio" name="SignupForm[user_type]" value="1"> 买家</label>
+                            <label class="radio-inline"><input type="radio" name="SignupForm[user_type]" value="2"> 摄影师</label>
+                            <label class="radio-inline"><input type="radio" name="SignupForm[user_type]" value="3" checked=""> 两者都是</label></div>
+                            <p class="help-block help-block-error"></p>
+                        </div>
+
+                    </div>
+                    <div class="company-info">
+                        <div class="form-group field-signupform-company_name">
+
+                            <input type="text" id="signupform-company_name" class="form-control" name="SignupForm[company_name]" placeholder="公司名称">
+
+                            <p class="help-block help-block-error"></p>
+                        </div>
+                        <div class="form-group field-signupform-mobile">
+
+                            <input type="tel" id="signupform-mobile" class="form-control" name="SignupForm[mobile]" maxlength="11" placeholder="手机">
+
+                            <p class="help-block help-block-error"></p>
+                        </div>    </div>
+
+                    <div class="user-style-info">
+                        <div class="form-group field-signupform-styles">
+
+                            <span id="parent-s2-togall-signupform-styles" style="display:none"><span id="s2-togall-signupform-styles" class="s2-togall-button s2-togall-select"><span class="s2-select-label"><i class="glyphicon glyphicon-unchecked"></i>Select all</span><span class="s2-unselect-label"><i class="glyphicon glyphicon-check"></i>Unselect all</span></span></span><input type="hidden" name="SignupForm[styles]" value=""><select id="signupform-styles" class="form-control select2-hidden-accessible" name="SignupForm[styles][]" multiple="" size="4" data-s2-options="s2options_c4acac00" data-krajee-select2="select2_daf2e7eb" style="display:none" tabindex="-1" aria-hidden="true">
+                            <option value="1">城市</option>
+                            <option value="2">抽象</option>
+                            <option value="3">创意</option>
+                            <option value="4">动物</option>
+                            <option value="5">地标性建筑</option>
+                            <option value="6">儿童</option>
+                            <option value="7">工业</option>
+                            <option value="8">观念</option>
+                            <option value="9">婚礼</option>
+                            <option value="10">互联网</option>
+                            <option value="11">街区</option>
+                            <option value="12">节日</option>
+                            <option value="13">家庭</option>
+                            <option value="14">季节</option>
+                            <option value="15">教育</option>
+                            <option value="16">金融</option>
+                            <option value="17">结构</option>
+                            <option value="18">建筑</option>
+                            <option value="19">静物</option>
+                            <option value="20">技术</option>
+                            <option value="21">聚会</option>
+                            <option value="22">科学</option>
+                            <option value="23">科技</option>
+                            <option value="24">空中</option>
+                            <option value="25">空间</option>
+                            <option value="26">旅行</option>
+                            <option value="27">名人</option>
+                            <option value="28">冒险</option>
+                            <option value="29">美妆</option>
+                            <option value="30">汽车</option>
+                            <option value="31">情侣</option>
+                            <option value="32">亲情</option>
+                            <option value="33">青年文化</option>
+                            <option value="34">人像</option>
+                            <option value="35">人类</option>
+                            <option value="36">时尚</option>
+                            <option value="37">水下</option>
+                            <option value="38">商业贸易</option>
+                            <option value="39">食物饮品</option>
+                            <option value="40">生活方式</option>
+                            <option value="41">社会纪实</option>
+                            <option value="42">体育</option>
+                            <option value="43">文学</option>
+                            <option value="44">未来</option>
+                            <option value="45">休闲</option>
+                            <option value="46">乡村</option>
+                            <option value="47">艺术</option>
+                            <option value="48">幽默</option>
+                            <option value="49">音乐</option>
+                            <option value="50">娱乐</option>
+                            <option value="51">运输</option>
+                            <option value="52">医疗保健</option>
+                            <option value="53">野生动物</option>
+                            <option value="54">自然</option>
+                            <option value="55">植物</option>
+                            <option value="56">装饰</option>
+                            <option value="57">职业</option>
+                            <option value="58">宗教</option>
+                        </select><span class="select2 select2-container select2-container--krajee" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="摄影风格" style="width: 0px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+                            <p class="help-block help-block-error"></p>
+                        </div>    </div>
+
+                    <div class="form-group field-signupform-agreement required">
+                        <div class="checkbox">
+                            <label style="color: #f0f0f0;" for="signupform-agreement">
+                                <input type="hidden" name="SignupForm[agreement]" value="0"><input type="checkbox" id="signupform-agreement" name="SignupForm[agreement]" value="1">
+                                <a target="_blank" href="page/user-condition">我已经仔细阅读、认可并接受《服务条款》中的全部条款。</a>
+                            </label>
+                            <p class="help-block help-block-error"></p>
+
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <button type="submit" class="sw-btn btn-block sw-btn-big sw-btn-default submit">注 册</button>        <div class="text-right" style="float: right; width: 40%;">
+                        <div><a href="/login">已有账号点此登录</a></div>
+                        <div><a href="/forgot-password">忘记密码</a></div>
+                    </div>
+                    </div>
+
+                </form>
+                <hr>
+                <div class="third-party">
+                    <a href="">无需注册，您可以用社交帐号登录</a>
+                    <a href="/user/oauth/weibo" class="btn btn-default btn-sm btn-sn-weibo" data-toggle="tooltip" data-placement="bottom" title="微博账号">
+                        <span class="icon-sn-weibo"></span>
+                        <strong class="visible-xs-inline">微博账号</strong>
+                    </a>
+                    <a href="/user/oauth/qq" class="btn btn-default btn-sm btn-sn-qq" data-toggle="tooltip" data-placement="bottom" title="QQ账号">
+                        <span class="icon-sn-qq"></span>
+                        <strong class="visible-xs-inline">QQ账号</strong>
+                    </a>
+                    <a href="/user/oauth/wechat" class="btn btn-default btn-sm btn-sn-wechat" data-toggle="tooltip" data-placement="bottom" title="微信账号">
+                        <span class="icon-sn-wechat"></span>
+                        <strong class="visible-xs-inline">微信账号</strong>
+                    </a>
+                </div>
+                <script src="/assets/e9c47be4/yii.validation.js"></script>
+                <script src="/assets/bccf1ad8/js/select2.full.min.js"></script>
+                <script src="/assets/bccf1ad8/js/select2-krajee.min.js"></script>
+                <script src="/assets/bccf1ad8/js/i18n/zh-CN.js"></script>
+                <script src="/assets/f663f008/js/kv-widgets.min.js"></script>
+                <script src="/assets/e9c47be4/yii.activeForm.js"></script>
+                <script type="text/javascript">kvInitPlugin(jQuery('#signupform-styles').kvSelector(), function(){
+                    if (jQuery('#signupform-styles').data('select2')) { jQuery('#signupform-styles').select2('destroy'); }
+                    jQuery.when(jQuery('#signupform-styles').select2(select2_daf2e7eb)).done(initS2Loading('signupform-styles','s2options_c4acac00'));
+
+                });
+
+                jQuery('#w0').yiiActiveForm([{"id":"signupform-email","name":"email","container":".field-signupform-email","input":"#signupform-email","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"邮箱地址不能为空。"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"邮箱地址不是有效的邮箱地址。","enableIDN":false,"skipOnEmpty":1});}},{"id":"signupform-username","name":"username","container":".field-signupform-username","input":"#signupform-username","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"用户名不能为空。"});}},{"id":"signupform-password","name":"password","container":".field-signupform-password","input":"#signupform-password","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"登录密码不能为空。"});yii.validation.string(value, messages, {"message":"登录密码必须是一条字符串。","min":8,"tooShort":"登录密码应该包含至少8个字符。","skipOnEmpty":1});}},{"id":"signupform-user_type","name":"user_type","container":".field-signupform-user_type","input":"#signupform-user_type","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"user.user_type不能为空。"});yii.validation.range(value, messages, {"range":["1","2","3"],"not":false,"message":"user.user_type是无效的。","skipOnEmpty":1});}},{"id":"signupform-company_name","name":"company_name","container":".field-signupform-company_name","input":"#signupform-company_name","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"公司名称必须是一条字符串。","skipOnEmpty":1});}},{"id":"signupform-mobile","name":"mobile","container":".field-signupform-mobile","input":"#signupform-mobile","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"手机必须是整数。","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"手机必须是一条字符串。","min":11,"tooShort":"手机应该包含至少11个字符。","max":11,"tooLong":"手机只能包含至多11个字符。","skipOnEmpty":1});yii.validation.regularExpression(value, messages, {"pattern":/^1[0-9]{10}$/,"not":false,"message":"手机必须为1开头的11位纯数字","skipOnEmpty":1});}},{"id":"signupform-agreement","name":"agreement","container":".field-signupform-agreement","input":"#signupform-agreement","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"我已经仔细阅读、认可并接受《服务条款》中的全部条款。不能为空。"});yii.validation.range(value, messages, {"range":["1"],"not":false,"message":"必须同意该条款才能使用本站提供的服务。"});}}], []);
+                $(function () {
+                    $('input[name="SignupForm[user_type]"]').click(function(){
+                        var userType = $(this).val();
+                        if (userType == 1) {
+                            $('.company-info').show();
+                            $('.user-style-info').hide();
+                        } else if (userType == 2) {
+                            $('.company-info').hide();
+                            $('.user-style-info').show();
+                        } else if (userType == 3) {
+                            $('.company-info').show();
+                            $('.user-style-info').show();
+                        }
+                    });
+
+                    $('form.signupAjaxForm').on('submit', function (e) {
+                        var form = $(this);
+
+                        $.ajax({
+                            url: form.attr('action'),
+                            type: 'post',
+                            data: form.serialize(),
+                            beforeSend: function () {
+                                $('.signupAjaxForm .submit').attr('disabled', !0).addClass('disabled').text('正在创建用户，请稍等...');
+                            },
+                            success: function (response) {
+                                $('#signupModal .modal-body').html(response);
+                            },
+                            complete: function () {
+                                $('.signupAjaxForm .submit').removeAttr('disabled').removeClass('disabled').text('注 册');
+                            }
+                        });
+
+                        return false;
+                    });
+                });</script></div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade in" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="dialogTitleLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="dialogTitleLabel">上传照片</h4>
+            </div>
+            <div class="modal-body"><div class="for-dialog-body" style="padding: 1em;">
+                <form id="editPhotoForm" class="form-vertical" action="/photo/edit" method="post">
+                    <input type="hidden" name="_csrf" value="djFtRFRxYTcXRiA3GjMPRgR0DDQgJVl9DlUIKD4TUUUxfQVwLj47Dw==">				<div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="hidden" id="photoform-source_file" name="PhotoForm[source_file]">					<div class="request-example-edit-preview">
+                            <div class="thumbnail-box" style="height: 250px; padding-top: 5px; line-height: 240px;">
+                                <img id="photoImage" class="img-thumbnail" src="images/substitutes/image-600.png" alt="" style="max-height: 240px;">
+                                <div class="in-thumbnail-box-process-bar" style="padding: 0px 15px 2px;" id="uploadPhotoButton-progress-bar">
+                                    <div class="uploadify-progress">
+                                        <div class="uploadify-progress-bar"><!--Progress Bar--></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uploadExampleButtonBox text-center">
+                                <div class="example-action add" onclick="$(this).next().click()" id="uploadPhotoButton">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                </div>
+                                <input id="uploadPhotoFile" type="file" name="uploadPhotoFile">
+                            </div>
+                        </div>
+                            <p class="text-center help-block">请上传不小于800x800px无水印的原创作品</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group required" style="margin-bottom: 0">
+                                <label class="control-label" style="margin-bottom: 0">版权许可</label>
+                            </div>
+                            <div class="form-group field-photoform-copyright required">
+
+                                <div class="checkbox"><input type="hidden" name="PhotoForm[copyright]" value="0"><label><input type="checkbox" id="photoform-copyright" name="PhotoForm[copyright]" value="1"> 这是我自己的照片，有权利出售它</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-has_portrait">
+                                <label class="control-label" for="photoform-has_portrait">照片中是否有可识别人像或物品？</label>
+                                <input type="hidden" name="PhotoForm[has_portrait]" value=""><div id="photoform-has_portrait" label="照片中是否有可识别人像或物品？"><label class="radio-inline"><input type="radio" name="PhotoForm[has_portrait]" value="1"> 有</label>
+                                <label class="radio-inline"><input type="radio" name="PhotoForm[has_portrait]" value="0" checked=""> 没有</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-portrait_copyright">
+
+                                <div class="checkbox"><input type="hidden" name="PhotoForm[portrait_copyright]" value="0"><label><input type="checkbox" id="photoform-portrait_copyright" name="PhotoForm[portrait_copyright]" value="1"> 我已取得他（她）对照片的授权</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+
+                            <div class="form-group field-photoform-title required">
+                                <label class="control-label" for="photoform-title">照片主题</label>
+                                <input type="text" id="photoform-title" class="form-control" name="PhotoForm[title]" placeholder="照片主题">
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-description">
+                                <label class="control-label" for="photoform-description">内容简介</label>
+                                <textarea id="photoform-description" class="form-control" name="PhotoForm[description]" style="height: 50px" placeholder="亲爱的，如果照片有具体的拍摄地请加上哦，这样有利于买家更好的了解照片信息"></textarea>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-tags">
+                                <label class="hidden control-label" for="photoform-tags">标签</label>
+                                <input type="hidden" name="PhotoForm[tags]" value=""><select id="photoform-tags" class="form-control" name="PhotoForm[tags][]" multiple="" size="1">
+
+                            </select>
+
+                                <div class="help-block"></div>
+                            </div>				</div>
+                    </div>
+                </div>
+                </form>	</div></div>
+            <div class="modal-footer"><div class="for-dialog-footer">
+                <div class="text-center">
+                    <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default" onclick="$('#editPhotoForm').submit(); return false;" type="button">保存</button>
+                </div>
+                <script type="text/javascript">
+                    function trashPhotoDraft(fKey) {
+                        $.post('uploader/trash', {key: fKey}, function(response){});
+                    }
+                    function initPhotoUploader() {
+                        $('#uploadPhotoFile').fileupload(getUploadConfig('photo', {
+                            minSize: 400 * 1024,
+                            minWidth: 800,
+                            minHeight: 800,
+                            uploadButton: '#uploadPhotoButton',
+                            uploadProcessBar: '#uploadPhotoButton-progress-bar',
+                            done: function(e, data) {
+                                if (data.result.success) {
+                                    $('.uploadExampleButtonBox').hide();
+                                    $('#photoImage').attr('src', data.result.src);
+                                    if ($('#photoform-source_file').val()) {
+                                        trashPhotoDraft($('#photoform-source_file').val());
+                                    }
+                                    $('#photoform-source_file').val(data.result.key);
+                                    $('#uploadPhotoButton').show();
+                                }
+                            }
+                        }));
+                    }
+                    function submitEditPhotoForm() {
+                        var btn = $('#submitPhotoForm');
+                        if (btn.text().substr(-3) == '...') return false;
+                        var result = true;
+                        var ele = $('#photoform-copyright');
+                        var p = ele.parents('div.form-group:first');
+                        p.find('div.help-block').html('');
+                        if (ele.length && ele.val() < 1) {
+                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
+                            result = false;
+                        }
+
+                        ele = $('#photoform-portrait_copyright');
+                        p = ele.parents('div.form-group:first');
+                        p.find('div.help-block').html('');
+                        if ($('#photoform-has_portrait').val() > 0 && ele.val() < 1) {
+                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
+                            result = false;
+                        }
+
+                        ele = $('#photoform-source_file');
+                        if (ele.val().length < 1) {
+                            showFlashMessage({success: false, message: '请上传照片，或等待照片上传完毕'});
+                            result = false;
+                        }
+
+                        if (!$('input[name="PhotoForm[copyright]"]').is(':checked')) {
+                            showFlashMessage({success: false, message: '请确认版权许可，未经版权许可不允许上传'});
+                            result = false;
+                        }
+
+                        if ($('input[name="PhotoForm[has_portrait]"]:checked').val() === '1') {
+                            if (!$('input[name="PhotoForm[portrait_copyright]"]').is(':checked')) {
+                                showFlashMessage({success: false, message: '请对有可识别人像或物品的照片进行授权'});
+                                result = false;
+                            }
+                        }
+
+                        if ($('#photoform-title').val().length < 1) {
+                            showFlashMessage({success: false, message: '请填写照片主题'});
+                            result = false;
+                        }
+
+                        if (result) {
+                            var btnText = btn.text();
+                            btn.text(btnText + '...');
+                        } else {
+                            return false;
+                        }
+                        var form = $('#editPhotoForm');
+                        $.post(form.attr('action'), form.serialize(), function(response){
+                            btn.text(btnText);
+                            if (typeof response == 'string') {
+                                if ($('#editPhotoWidget').length) {
+                                    $('#editPhotoWidget').parent().html(response);
+                                } else {
+                                    $.popupModal(response);
+                                }
+                            } else {
+                                showFlashMessage(response);
+                                try {
+                                    afterSavePhoto(response.id, response.is_new);
+                                } catch(e) {
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                    $(document).ready(function(){
+                        initPhotoUploader();
+                        $('#editPhotoForm').submit(submitEditPhotoForm);
+                        $('input.switchAble').switchButton();
+                        $('#photoform-tags').makeDropdown({freeEdit: true, inputBoxTpl: '<label style="margin-right: 20px;"></label>', buttonTpl: '<button class="btn btn-default btn-sm" type="button">+关键字</button>'});
+
+                        // disable Esc and click page space to close modal
+                        $('#dialogModal').modal({backdrop: 'static', keyboard: false});
+
+                        // show or hide portrait_copyright according to has_portrait options
+                        $('.field-photoform-portrait_copyright').hide();
+                        $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
+
+                        $('input[name="PhotoForm[has_portrait]"]').click(function(){
+                            if ($(this).val() == 1) {
+                                $('.field-photoform-portrait_copyright').show();
+                            } else {
+                                $('.field-photoform-portrait_copyright').hide();
+                                $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
+                            }
+                        });
+                    });
+                </script>
+            </div></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

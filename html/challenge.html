@@ -1,0 +1,1063 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--如果是IE浏览器，那么请使用最高版本的IE核心去处理-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <!--移动端的窗口，和我们页面效果是同一尺寸比例-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Picpas众包摄影 - 让照片更有价值,人人都是摄影师</title>
+
+    <!--引入bootstrap的css文件-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link href="../css/challenge.css" rel="stylesheet" type="text/css">
+    <script src="../public/js/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav-collapse-bar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="../images/logo-145x28.png" class="nav-logo" alt="www.picpas.com" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="top-nav-collapse-bar">
+                <ul class="nav navbar-nav links">
+                    <li>
+                        <a href="#"> 需求 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 挑战 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 高级市场 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 摄影师 </a>
+                    </li>
+                    <li>
+                        <a href="#"> 精选专辑 </a>
+                    </li>
+                    <li class="show-under-collapse-in hidden-md hidden-lg">
+                        <a href="#"> 登录 </a>
+                    </li>
+                    <li class="show-under-collapse-in hidden-md hidden-lg">
+                        <a href="#"> 注册 </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
+                    <li class="nav-link-icon" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="查看购物车">
+                        <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </li>
+                    <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="发布需求">
+                        <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                    </li>
+                    <li class="nav-link-icon">
+                        <a class="text-link ajax-login" href="javascript:;">登录</a>
+                    </li>
+                    <li class="nav-link-icon">
+                        <a class="text-link ajax-signup" href="javascript:;">注册</a>
+                    </li>
+                </ul>
+                <form id="a" class="navbar-form navbar-right hidden-xs hidden-sm" action="#" method="GET" >
+                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="搜索照片">
+                        <input type="text" name="keyword" class="form-control"  placeholder="搜索照片">
+                        <span id="nav-search-submit" aria-hidden="true" class="glyphicon glyphicon-search " ></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    //content
+    <div id="mainContent" class="main-content page-request-challenge">
+        <div class="page-bg" style="background-image: url('../images/pic3.jpg');width: 100%; height: 600px;"></div>
+
+        <div class="page-container">
+            <div class="content-top-center text-center">
+                <div style="height: 240px; color: white;">
+                    <h1>需求</h1>
+                    <h2>定制个性化，有创意的照片，大家一起来创作，会有神奇的效果</h2>
+                    <a href="#" class="btn btn-default btn-lg">发布照片</a>
+                </div>
+            </div>
+
+            <div class="content-center search-filters">
+
+                <div class="container">
+                    <div class="row text-center search-bar">
+                        <form id="w1" class="form-inline text-left" action="#" method="GET" role="search" data-pjax="1">
+                            <div class="col-md-3 text-left">
+                                <h4 class="search-result-title">
+                                    287 个照片需求
+                                </h4>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select id="requestfilter-sort_key" class="search-filter-select-element" name="sort" style="display: none;">
+                                    <option value="price">最高价格</option>
+                                    <option value="publish_time">最新发布</option>
+                                    <option value="end_time">即将结束</option>
+                                </select>
+                                <div class="btn-group as-select">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <span>最高价格</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="dropdown">
+                                        <li data-key="price" class="active">最高价格</li>
+                                        <li data-key="publish_time">最新发布</li>
+                                        <li data-key="end_time">即将结束</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <select id="requestfilter-business_type" class="search-filter-select-element" name="business_type" style="display: none;">
+                                    <option value="" selected="">用途类型</option>
+                                    <!--<option value="1">个人私用</option>-->
+                                    <!--<option value="2">商务领域</option>-->
+                                    <option value="3">官方挑战</option>
+                                </select>
+                                <div class="btn-group as-select">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span>用途类型</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="dropdown">
+                                        <li data-key="" class="active">用途类型</li>
+                                        <!--<li data-key="1">个人私用</li>-->
+                                        <!--<li data-key="2">商务领域</li>-->
+                                        <li data-key="3">官方挑战</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <select id="requestfilter-status" class="search-filter-select-element" name="status" style="display: none;">
+                                    <option value="" selected="">发布状态</option>
+                                    <option value="3">正在进行</option>
+                                    <option value="4">回放评选</option>
+                                    <option value="5">已经结束</option>
+                                </select>
+                                <div class="btn-group as-select">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <span>发布状态</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="dropdown">
+                                        <li data-key="" class="active">发布状态</li>
+                                        <li data-key="3">正在进行</li>
+                                        <li data-key="4">回放评选</li>
+                                        <li data-key="5">已经结束</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <div class="container2">
+            <div  class="grid-wrapper request-list">
+                <div id="" class="list-view">
+                    <div class="grid-container row clearfix">
+                        <div class="col-md-4 grid-item" data-key="0">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="1">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="2">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="3">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="4">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="5">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="6">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="7">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="8">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="9">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="10">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="12">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="12">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="13">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="14">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="15">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="16">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="17">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="18">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="19">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-item" data-key="20">
+                            <div class="sw-card-background" style="background-image: url('../images/jku3.jpg');width: 360px; height: 390px;" item-id="10605" item-name="且听风吟">
+                                <span class="sw-overlay"></span>
+                                <a href="">
+                                    <div class="content open">
+                                        <div class="sw-card-request-top">
+                                            <!--<h5 class="request-type" style="display: none;">官方挑战</h5>-->
+                                            <h2 class="request-title medium">且听风吟</h2>
+                                            <!--<h4 class="request-name"style="display: none;">picpas</h4>-->
+                                            <!--<h4 class="request-price"style="display: none;">￥<span>100</span></h4>-->
+                                            <div class="request-details">
+                                                    <span class="request-time">
+                                                        <i class="fa fa-clock-o"></i>
+                                                        <span class="hasCountdown">
+                                                            <span class="countdown_row countdown_amount" ms="1" time="21945815">25天 09:36:21 .5</span>
+                                                        </span>
+                                                    </span>
+                                                <span class="request-stats-right" alt="24名摄影师参与">
+                                                    <i class="fa fa-user"></i> 24
+                                                </span>
+                                                <span class="request-stats-right" alt="37张照片提交">
+                                                    <i class="fa fa-camera"></i> 37
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="sw-card-request-chin">
+                                            <h4 class="request-price">￥<span>100</span></h4>
+                                            <div class="request-user">
+                                                <img src="http://7xjcc5.com2.z0.glb.clouddn.com/files/images/avatar/Qb9XVirU1467509685_40x40_1" class="avatar">
+                                                <h5 class="request-type">官方挑战</h5>
+                                                <h4 class="request-name">picpas</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yiipage">
+                        <ul class="pagination">
+                            <li class="prev disabled"><span>«</span></li>
+                            <li class="active"><a href="#" data-page="0">1</a></li>
+                            <li><a href="#" data-page="1">2</a></li>
+                            <li><a href="#" data-page="2">3</a></li>
+                            <li><a href="#" data-page="3">4</a></li>
+                            <li><a href="#" data-page="4">5</a></li>
+                            <li><a href="#" data-page="5">6</a></li>
+                            <li><a href="#" data-page="6">7</a></li>
+                            <li><a href="#" data-page="7">8</a></li>
+                            <li><a href="#" data-page="8">9</a></li>
+                            <li><a href="#" data-page="9">10</a></li>
+                            <li class="next"><a href="#" data-page="1">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="section-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 site-links">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="title">网站简介</p>
+                            <p><a href="#">关于我们</a></p>
+                            <p><a href="#">免版税照片（RF）</a></p>
+                            <p><a href="#">联系我们</a></p>
+                            <p><a href="#">F.A.Q</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="title">买家攻略</p>
+                            <p><a href="#">需求和挑战</a></p>
+                            <p><a href="#">怎样买到满意的照片</a></p>
+                            <p><a href="#">照片的价格</a></p>
+                            <p><a href="#">尺寸用途的建议</a></p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="title">服务条款</p>
+                            <p><a href="#">使用条款</a></p>
+                            <p><a href="#">照片使用许可协议</a></p>
+                            <p><a href="#">隐私政策</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="title">摄影师攻略</p>
+                            <p><a href="#">Picpas入门</a></p>
+                            <p><a href="#">等级及佣金</a></p>
+                            <p><a href="#">什么是高级市场</a></p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 social-links">
+                    <div class="row">
+                        <p class="title" style="border-color: transparent;"><a href="/"><img alt="picpas" src="../images/logo-text-100x28.png"></a></p>
+                        <p class="tiao">Picpas是一个拍照需求和照片分享社区，针对各个层级的摄影师，致力于提供一流的服务。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="site-copyright">Copyright © 2017 陕西西安任道网络科技有限公司 <span>本站图片未经授权不得使用，否则属于侵权行为。</span></p>
+                    <p class="site-copyright">
+                        陕 ICP备 15003746-1
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p class="site-copyright text-center">
+                        <img src="../images/logo-bottom-44x30.png" alt="喜欢picpas" />
+                        <span style="margin-left: 1em;">嘘。。。悄悄地撬动这个地球</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../public/js/jquery-1.12.4.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+</body>
+
+</html>

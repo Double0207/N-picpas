@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--如果是IE浏览器，那么请使用最高版本的IE核心去处理-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <!--移动端的窗口，和我们页面效果是同一尺寸比例-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Picpas众包摄影 - 让照片更有价值,人人都是摄影师</title>
+
+    <!--引入bootstrap的css文件-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <script src="../public/js/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav-collapse-bar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="../images/logo-145x28.png" class="nav-logo" alt="www.picpas.com" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="top-nav-collapse-bar">
+                <ul class="nav navbar-nav links">
+                    <li>
+                        <a href="request.html" onClick="change_hd(this)"> 需求 </a>
+                    </li>
+                    <li>
+                        <a href="challenge.html" onClick="change_hd(this)"> 挑战 </a>
+                    </li>
+                    <li>
+                        <a href="collections.html"> 高级市场 </a>
+                    </li>
+                    <li>
+                        <a href="photographer.html" onClick="change_hd(this)"> 摄影师 </a>
+                    </li>
+                    <li>
+                        <a href="photo.html" onClick="change_hd(this)"> 精选专辑 </a>
+                    </li>
+                    <li class="show-under-collapse-in hidden-md hidden-lg">
+                        <a href=""> 登录 </a>
+                    </li>
+                    <li class="show-under-collapse-in hidden-md hidden-lg">
+                        <a href="#"> 注册 </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
+                    <li class="nav-link-icon" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="查看购物车">
+                        <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </li>
+                    <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="发布需求">
+                        <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                    </li>
+                    <li class="nav-link-icon">
+                        <a class="text-link ajax-login" href="javascript:;"  id="login">登录</a>
+                        <div class="dl"></div>
+                        <div class="nu"></div>
+                        <div class="t_list">
+                            <div class="inne">
+                                <ul class="u_cb">
+                                    <li>
+                                        <a href="#" class="itm_1" id="sjdl">
+                                            <i class="icn"></i>
+                                            <em>手机号登录</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://music.163.com/api/sns/authorize?snsType=10&clientType=web2&callbackType=Login&forcelogin=true" target="_blank" class="itm_2">
+                                            <i class="icn1"></i>
+                                            <em>微信登录</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://music.163.com/api/sns/authorize?snsType=5&clientType=web2&callbackType=Login&forcelogin=true" target="_blank" class="itm_2">
+                                            <i class="icn2"></i>
+                                            <em>QQ登录</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Login&forcelogin=true" target="_blank" class="itm_2">
+                                            <i class="icn3"></i>
+                                            <em>新浪微博登录</em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="itm_2" id="wyyx">
+                                            <i class="icn4"></i>
+                                            <em>网易邮箱帐号登录</em>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <i class="arr"></i>
+                        </div>
+            <!--</div>-->
+                    </li>
+                    <li class="nav-link-icon">
+                        <a class="text-link ajax-signup" href="javascript:;">注册</a>
+                    </li>
+                </ul>
+                <form id="w1" class="navbar-form navbar-right hidden-xs hidden-sm" action="#" method="GET" >
+                    <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="搜索照片">
+                        <input type="text" name="keyword" class="form-control"  placeholder="搜索照片">
+                        <span id="nav-search-submit" aria-hidden="true" class="glyphicon glyphicon-search " ></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <div id="mainContentBox" class="main-content page-index-index">
+        <div class="home-bg"  style="background-image: url('../images/mainbig.jpg');height: 800px;"></div>
+            <div class="section-grey viewport-section1">
+                <div class="viewport-center">
+                    <div class="container text-center">
+                        <div class="row margin-bottom-big">
+                            <div class="col-md-12">
+                                <p style="font-size: 24px;">您可以</p>
+                                <div class="features-header-line"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <dl class="homepage-features request">
+                                    <dt><img src="../images/q.png"></dt>
+                                    <dd><h3>照片需求方</h3></dd>
+                                    <dd>发一个照片需求，让大家了解你的要求细节，<br />然后自然会有摄影师的投稿。</dd>
+                                    <dd><a class="btn btn-default btn-lg" href="#">+ 发需求</a></dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-4">
+                                <dl class="homepage-features photographer">
+                                    <dt><img src="../images/q2.png"></dt>
+                                    <dd><h3>摄影师</h3></dd>
+                                    <dd>成为一个摄影达人，首先完善一个有质量的作品集，<br />阐释你自己的风格。</dd>
+                                    <dd><a class="btn btn-default btn-lg" href="#">立即开始</a></dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-4">
+                                <dl class="homepage-features photo">
+                                    <dt><img src="../images/q3.png"></dt>
+                                    <dd><h3>浏览搜索</h3></dd>
+                                    <dd>逛逛看，Picpas里有很多类型的摄影作品，<br />找到你的所需是一个筛选沟通的过程。</dd>
+                                    <dd><a class="btn btn-default btn-lg" href="#">探索</a></dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-white viewport-section app">
+                <div class="viewport-center1" style="display: inherit;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mobile_device"></div>
+                                <div class="iphone_wrap">
+                                    <div class="iphone" style="transform: translate3d(0px, 0px, 0px) rotateY(7.21154deg);">
+                                        <div class="outline">
+                                            <div class="screen"></div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="sensor hole"></div>
+                                        <div class="camera hole"></div>
+                                        <div class="speaker hole"></div>
+                                    </div>
+                                    <div class="home"></div>
+                                </div>
+                                <div class="wrap">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text_wrap">
+                                <div class="center">
+                                    <h2>让你的照片更有价值</h2><h4>创建自己的作品集并从中出售，参与需求并赚取佣金，为喜欢的照片贴上个性的标签，和周围的摄影者成为好友。</h4>
+                                    <div class="downloads">
+                                        <a href="#" target="_blank">
+                                            <img class="app_store" src="../images/app.svg">
+                                        </a>
+                                        <a href="http://android.myapp.com/myapp/detail.htm?apkName=com.satnti.picpas" target="_blank">
+                                            <img class="app_store app_android" src="../images/android.png">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grey viewport-section">
+            <div class="viewport-center2">
+                <h1 class="light text-center margin-bottom">精选照片专辑</h1>
+                <h4 class="light text-center">每一张照片都由我们精心挑选. <a href="#">浏览专辑 &gt;</a></h4>
+                <div class="container" style="margin-top:25px;">
+                    <div class="row1">
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/1qingxin.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">清 新</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/shenghuo.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">生 活</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/3lving.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">旅 行</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/4menfxi.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">萌 系</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/5chaoxians.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">超现实</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/6shiyou.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">食 诱</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/7shiguang.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">时 光</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/8chuangyi.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">创 意</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#">
+                                <div class="collection-item" style="background-image: url('../images/9jijian.jpg');margin-left: 50px;">
+                                    <span class="sw-overlay"></span>
+                                    <div class="collection-title">极 简</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-white viewport-section">
+            <div class="viewport-center3">
+                <div class="container">
+                    <div class="row text-center" style="margin-top: -54px;">
+                        <h3>喜欢拍照片？并且同时可以获取佣金！</h3>
+                        <p>&nbsp;</p>
+                        <a class="btn btn-default btn-lg" href="#">成为一个摄影师</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                   <div id="flashMessagesBox"></div>
+    </div>
+    </div>
+
+
+
+
+
+    <footer class="section-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 site-links">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="title">网站简介</p>
+                            <p><a href="#">关于我们</a></p>
+                            <p><a href="#">免版税照片（RF）</a></p>
+                            <p><a href="#">联系我们</a></p>
+                            <p><a href="#">F.A.Q</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="title">买家攻略</p>
+                            <p><a href="#">需求和挑战</a></p>
+                            <p><a href="#">怎样买到满意的照片</a></p>
+                            <p><a href="#">照片的价格</a></p>
+                            <p><a href="#">尺寸用途的建议</a></p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="title">服务条款</p>
+                            <p><a href="#">使用条款</a></p>
+                            <p><a href="#">照片使用许可协议</a></p>
+                            <p><a href="#">隐私政策</a></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="title">摄影师攻略</p>
+                            <p><a href="#">Picpas入门</a></p>
+                            <p><a href="#">等级及佣金</a></p>
+                            <p><a href="#">什么是高级市场</a></p>
+                            <p><a href="#">了解更多</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 social-links">
+                    <div class="row">
+                        <p class="title" style="border-color: transparent;"><a href="/"><img alt="picpas" src="../images/logo-text-100x28.png"></a></p>
+                        <p class="tiao">Picpas是一个拍照需求和照片分享社区，针对各个层级的摄影师，致力于提供一流的服务。</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="site-copyright">Copyright © 2017 陕西西安任道网络科技有限公司 <span>本站图片未经授权不得使用，否则属于侵权行为。</span></p>
+                    <p class="site-copyright">
+                        陕 ICP备 15003746-1
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p class="site-copyright text-center">
+                        <img src="../images/logo-bottom-44x30.png" alt="喜欢picpas" />
+                        <span style="margin-left: 1em;">嘘。。。悄悄地撬动这个地球</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <!--<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">-->
+        <!--<div class="modal-dialog" role="document">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true"><i class="fa fa-remove"></i></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash; Modal &ndash;&gt;-->
+    <!--<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel">-->
+        <!--<div class="modal-dialog" role="document">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                        <!--<span aria-hidden="true"><i class="fa fa-remove"></i></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<style>-->
+
+    <!--</style>-->
+
+    <script src="../public/js/jquery-1.12.4.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
