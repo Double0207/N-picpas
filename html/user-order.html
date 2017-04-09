@@ -1,10 +1,191 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!--如果是IE浏览器，那么请使用最高版本的IE核心去处理-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+    <!--移动端的窗口，和我们页面效果是同一尺寸比例-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Picpas众包摄影 - 让照片更有价值,人人都是摄影师</title>
+
+    <!--引入bootstrap的css文件-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link href="../css/user-order.css" rel="stylesheet" type="text/css">
+    <script src="../public/js/jquery-1.12.4.min.js"></script>
+
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-nav-collapse-bar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="../images/logo-145x28.png" class="nav-logo" alt="www.picpas.com" />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="top-nav-collapse-bar">
+            <ul class="nav navbar-nav links">
+                <li>
+                    <a href="#"> 需求 </a>
+                </li>
+                <li>
+                    <a href="#"> 挑战 </a>
+                </li>
+                <li>
+                    <a href="#"> 高级市场 </a>
+                </li>
+                <li>
+                    <a href="#"> 摄影师 </a>
+                </li>
+                <li>
+                    <a href="#"> 精选专辑 </a>
+                </li>
+                <li class="show-under-collapse-in hidden-md hidden-lg">
+                    <a href="#"> 登录 </a>
+                </li>
+                <li class="show-under-collapse-in hidden-md hidden-lg">
+                    <a href="#"> 注册 </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
+                <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="上传照片">
+                    <a onclick="showEditPhotoDialog()">
+                        <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload"></span>
+                    </a>
+                </li>
+                <li class="nav-link-icon" id="shopping-cart-nav-icon2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="查看购物车">
+                    <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                </li>
+                <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="发布需求">
+                    <a href="#"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                </li>
+                <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="你有0条未读消息">
+                    <a href="#">
+                        <span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>
+                    </a>
+                </li>
+                <li class="nav-avatar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="我的主页">
+                    <p class="navbar-text" id="openUserActionsBarButton">
+                        <img alt="1056737150" class="userAvatar avatar24 no-action" src="../images/avatar.jpg">
+                        <i class="fa fa-angle-right"></i>
+                    </p>
+                </li>
+            </ul>
+            <form id="a" class="navbar-form navbar-right hidden-xs hidden-sm" action="#" method="GET" >
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="搜索照片">
+                    <input type="text" name="keyword" class="form-control"  placeholder="搜索照片">
+                    <span id="nav-search-submit" aria-hidden="true" class="glyphicon glyphicon-search " ></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+<div id="mainContentBox" class="main-content page-user-notification">
+    <div class="page-bg" style="background-image: url(../images/page-user-notification.jpg)"></div>
+    <div class="container page-container">
+        <div class="page-header" style="color: #f0f0f0; margin-bottom: 0px;">
+            <h1><span style="margin-right: 0.25em;" aria-hidden="true" class="glyphicon glyphicon-paperclip"></span>我的订单</h1>
+        </div>
+        <div id="order-list-box" class="order-box">
+            <div></div>
+            <div class="row">
+                <div class="col-md-12" style="padding: 0 1em">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a class="dd" disabled="disabled" aria-controls="" role="tab" data-toggle="tab">全部订单</a></li>
+                        <li><a class="ll">未支付</a></li>
+                        <li><a class="ll">已支付</a></li>
+                        <li><a class="ll">已完成</a></li>
+                        <li><a class="ll">已关闭</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="background-color: #f0f0f0; min-height:300px; padding-top: 42px;">
+                <div id="w1" class="list-view">
+                    <div class="empty">没有找到数据。</div>
+                </div>
+            </div>
+        </div>
+        <!---->
+        <div id="flashMessagesBox"></div>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 site-links">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="title">网站简介</p>
+                        <p><a href="page/about-us">关于我们</a></p>
+                        <p><a href="page/rf-photos">免版税照片（RF）</a></p>
+                        <p><a href="page/contact-us">联系我们</a></p>
+                        <p><a href="page/faqs">F.A.Q</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="title">买家攻略</p>
+                        <p><a href="page/buyer-requirement-and-challenge">需求和挑战</a></p>
+                        <p><a href="page/buyer-how-to-buy-a-photo">怎样买到满意的照片</a></p>
+                        <p><a href="page/buyer-price">照片的价格</a></p>
+                        <p><a href="page/buyer-size-and-uses">尺寸用途的建议</a></p>
+                        <p><a href="page/faqs">了解更多</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="title">服务条款</p>
+                        <p><a href="page/user-condition">使用条款</a></p>
+                        <p><a href="page/copyright-condition">照片使用许可协议</a></p>
+                        <p><a href="page/secrecy-condition">隐私政策</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="title">摄影师攻略</p>
+                        <p><a href="page/seller-bonus">Picpas入门</a></p>
+                        <p><a href="page/seller-price-condition">等级及佣金</a></p>
+                        <p><a href="page/seller-advance-market">什么是高级市场</a></p>
+                        <p><a href="page/faqs">了解更多</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 social-links">
+                <div class="row">
+                    <p class="title" style="border-color: transparent;"><a href="/"><img alt="picpas" src="../images/logo-text-100x28.png"></a></p>
+                    <p>Picpas是一个拍照需求和照片分享社区，针对各个层级的摄影师，致力于提供一流的服务。</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="site-copyright">Copyright © 2017 陕西西安任道网络科技有限公司 <span>本站图片未经授权不得使用，否则属于侵权行为。</span></p>
+                <p class="site-copyright">
+                    陕 ICP备 15003746-1
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p class="site-copyright text-center">
+                    <img src="../images/logo-bottom-44x30.png" alt="喜欢picpas">
+                    <span style="margin-left: 1em;">嘘。。。悄悄地撬动这个地球</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
