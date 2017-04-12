@@ -17,6 +17,7 @@
     z-index: 1030;
 }
 #top-nav-collapse-bar{
+    width: 1140px;
     margin-top: 8px;
 }
 #top-nav-collapse-bar a{
@@ -54,7 +55,9 @@ body {
 .btn-lg{
     background-color: #0C8484;
 }
-
+nav .container{
+    margin-left: 100px;
+}
 
 
 

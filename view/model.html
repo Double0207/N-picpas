@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../css/model.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="modal fade in" id="dialogModal" tabindex="-1" role="dialog" aria-labelledby="dialogTitleLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="dialogTitleLabel">上传照片</h4>
+            </div>
+            <div class="modal-body"><div class="for-dialog-body" style="padding: 1em;">
+                <form id="editPhotoForm" class="form-vertical" action="#" method="post">
+                    <input type="hidden" name="_csrf" value="Z1czOVdCTU5SJ0pQJHp5C1Y7Vn80EhgmATl6dQQKPRsQAFIUYS0YIA==">				<div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="hidden" id="photoform-source_file" name="PhotoForm[source_file]">					<div class="request-example-edit-preview">
+                            <div class="thumbnail-box" style="height: 250px; padding-top: 5px; line-height: 240px;">
+                                <img id="photoImage" class="img-thumbnail" src="../images/image-600%20(1).png" alt="" style="max-height: 240px;">
+                                <div class="in-thumbnail-box-process-bar" style="padding: 0px 15px 2px;" id="uploadPhotoButton-progress-bar">
+                                    <div class="uploadify-progress">
+                                        <div class="uploadify-progress-bar"><!--Progress Bar--></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uploadExampleButtonBox text-center">
+                                <div class="example-action add" onclick="$(this).next().click()" id="uploadPhotoButton">
+                                    <i class="fa fa-plus fa-2x"></i>
+                                </div>
+                                <input id="uploadPhotoFile" type="file" name="uploadPhotoFile">
+                            </div>
+                        </div>
+                            <p class="text-center help-block">请上传不小于800x800px无水印的原创作品</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group required" style="margin-bottom: 0">
+                                <label class="control-label" style="margin-bottom: 0">版权许可</label>
+                            </div>
+                            <div class="form-group field-photoform-copyright required">
+
+                                <div class="checkbox"><input type="hidden" name="PhotoForm[copyright]" value="0"><label><input type="checkbox" id="photoform-copyright" name="PhotoForm[copyright]" value="1"> 这是我自己的照片，有权利出售它</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-has_portrait">
+                                <label class="control-label" for="photoform-has_portrait">照片中是否有可识别人像或物品？</label>
+                                <input type="hidden" name="PhotoForm[has_portrait]" value=""><div id="photoform-has_portrait" label="照片中是否有可识别人像或物品？"><label class="radio-inline"><input type="radio" name="PhotoForm[has_portrait]" value="1"> 有</label>
+                                <label class="radio-inline"><input type="radio" name="PhotoForm[has_portrait]" value="0" checked=""> 没有</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-portrait_copyright" style="display: none;">
+
+                                <div class="checkbox"><input type="hidden" name="PhotoForm[portrait_copyright]" value="0"><label><input type="checkbox" id="photoform-portrait_copyright" name="PhotoForm[portrait_copyright]" value="1"> 我已取得他（她）对照片的授权</label></div>
+
+                                <div class="help-block"></div>
+                            </div>
+
+                            <div class="form-group field-photoform-title required">
+                                <label class="control-label" for="photoform-title">照片主题</label><br/>
+                                <input type="text" id="photoform-title" class="form-control" name="PhotoForm[title]" placeholder="照片主题">
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-description">
+                                <label class="control-label" for="photoform-description">内容简介</label><br/>
+                                <textarea id="photoform-description" class="form-control" name="PhotoForm[description]" style="height: 50px" placeholder="亲爱的，如果照片有具体的拍摄地请加上哦，这样有利于买家更好的了解照片信息"></textarea>
+
+                                <div class="help-block"></div>
+                            </div>
+                            <div class="form-group field-photoform-tags">
+                                <!--<label class="hidden control-label" for="photoform-tags">标签</label>-->
+                                <!--<input type="hidden" name="PhotoForm[tags]" value="">-->
+
+                                <select id="photoform-tags" class="form-control" name="PhotoForm[tags][]" multiple="" size="1" style="display: none;"></select>
+                                <div class="makeDropdown-element">
+                                    <button class="btn btn-default btn-sm" type="button">+关键字</button>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+            <div class="modal-footer"><div class="for-dialog-footer">
+                <div class="text-center">
+                    <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default" onclick="$('#editPhotoForm').submit(); return false;" type="button">保存</button>
+                </div>
+                <script type="text/javascript">
+                    function trashPhotoDraft(fKey) {
+                        $.post('uploader/trash', {key: fKey}, function(response){});
+                    }
+                    function initPhotoUploader() {
+                        $('#uploadPhotoFile').fileupload(getUploadConfig('photo', {
+                            minSize: 400 * 1024,
+                            minWidth: 800,
+                            minHeight: 800,
+                            uploadButton: '#uploadPhotoButton',
+                            uploadProcessBar: '#uploadPhotoButton-progress-bar',
+                            done: function(e, data) {
+                                if (data.result.success) {
+                                    $('.uploadExampleButtonBox').hide();
+                                    $('#photoImage').attr('src', data.result.src);
+                                    if ($('#photoform-source_file').val()) {
+                                        trashPhotoDraft($('#photoform-source_file').val());
+                                    }
+                                    $('#photoform-source_file').val(data.result.key);
+                                    $('#uploadPhotoButton').show();
+                                }
+                            }
+                        }));
+                    }
+                    function submitEditPhotoForm() {
+                        var btn = $('#submitPhotoForm');
+                        if (btn.text().substr(-3) == '...') return false;
+                        var result = true;
+                        var ele = $('#photoform-copyright');
+                        var p = ele.parents('div.form-group:first');
+                        p.find('div.help-block').html('');
+                        if (ele.length && ele.val() < 1) {
+                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
+                            result = false;
+                        }
+
+                        ele = $('#photoform-portrait_copyright');
+                        p = ele.parents('div.form-group:first');
+                        p.find('div.help-block').html('');
+                        if ($('#photoform-has_portrait').val() > 0 && ele.val() < 1) {
+                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
+                            result = false;
+                        }
+
+                        ele = $('#photoform-source_file');
+                        if (ele.val().length < 1) {
+                            showFlashMessage({success: false, message: '请上传照片，或等待照片上传完毕'});
+                            result = false;
+                        }
+
+                        if (!$('input[name="PhotoForm[copyright]"]').is(':checked')) {
+                            showFlashMessage({success: false, message: '请确认版权许可，未经版权许可不允许上传'});
+                            result = false;
+                        }
+
+                        if ($('input[name="PhotoForm[has_portrait]"]:checked').val() === '1') {
+                            if (!$('input[name="PhotoForm[portrait_copyright]"]').is(':checked')) {
+                                showFlashMessage({success: false, message: '请对有可识别人像或物品的照片进行授权'});
+                                result = false;
+                            }
+                        }
+
+                        if ($('#photoform-title').val().length < 1) {
+                            showFlashMessage({success: false, message: '请填写照片主题'});
+                            result = false;
+                        }
+
+                        if (result) {
+                            var btnText = btn.text();
+                            btn.text(btnText + '...');
+                        } else {
+                            return false;
+                        }
+                        var form = $('#editPhotoForm');
+                        $.post(form.attr('action'), form.serialize(), function(response){
+                            btn.text(btnText);
+                            if (typeof response == 'string') {
+                                if ($('#editPhotoWidget').length) {
+                                    $('#editPhotoWidget').parent().html(response);
+                                } else {
+                                    $.popupModal(response);
+                                }
+                            } else {
+                                showFlashMessage(response);
+                                try {
+                                    afterSavePhoto(response.id, response.is_new);
+                                } catch(e) {
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                    $(document).ready(function(){
+                        initPhotoUploader();
+                        $('#editPhotoForm').submit(submitEditPhotoForm);
+                        $('input.switchAble').switchButton();
+                        $('#photoform-tags').makeDropdown({freeEdit: true, inputBoxTpl: '<label style="margin-right: 20px;"></label>', buttonTpl: '<button class="btn btn-default btn-sm" type="button">+关键字</button>'});
+
+                        // disable Esc and click page space to close modal
+                        $('#dialogModal').modal({backdrop: 'static', keyboard: false});
+
+                        // show or hide portrait_copyright according to has_portrait options
+                        $('.field-photoform-portrait_copyright').hide();
+                        $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
+
+                        $('input[name="PhotoForm[has_portrait]"]').click(function(){
+                            if ($(this).val() == 1) {
+                                $('.field-photoform-portrait_copyright').show();
+                            } else {
+                                $('.field-photoform-portrait_copyright').hide();
+                                $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
+                            }
+                        });
+                    });
+                </script>
+            </div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

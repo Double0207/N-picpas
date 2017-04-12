@@ -18,6 +18,7 @@
 }
 #top-nav-collapse-bar{
     margin-top: 8px;
+    width: 1140px;
 }
 #top-nav-collapse-bar a{
     color: #f0f0f0;
@@ -92,7 +93,7 @@ h2{
     font-size: 1.2em;
 }
 .container {
-    width: 1300px;
+    width: 1200px;
     height: 43px;
     padding: 0 15px;
     margin: 0 89px;
@@ -101,7 +102,7 @@ h2{
 .search-bar{
     width: 1300px;
     height: 43px;
-    margin: 0 -15px;
+    margin: 0 -15px 0 -30px;
 }
 form{
     width: 1300px;
