@@ -223,6 +223,9 @@ footer{
     color: #262b31;
     padding: 40px 0;
 }
+footer .container{
+   margin-left: 110px;
+}
 .social-links{
    margin-top: 10px;
 }
