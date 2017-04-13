@@ -82,7 +82,11 @@
 
 //content
 <div id="mainContent" class="main-content page-request-challenge">
-    <div class="page-bg" style="background-image: url('../images/pic3.jpg');width: 100%; height: 600px;"></div>
+    <div class="maintype_left">
+			<div class="scroll_mid">
+				<img src="../images/pic_1.jpg" id="pic"/>
+			</div>
+		</div>
 
     <div class="page-container">
         <div class="content-top-center text-center">
@@ -94,7 +98,33 @@
 
 
 
-
+<script>
+			var timer;//定时器
+			var index=0;
+			
+			function show(id){
+				if(Number(id)){
+					//清除定时器
+					clearInterval(timer);
+					index=id;
+					
+				}else{
+					//网页加载之后就执行的
+					//判断index
+					index=index%5+1;
+					
+				}
+				//设置图片
+				document.getElementById("pic").setAttribute("src","../images/pic_"+index+".jpg");
+			}
+			
+			show();
+			timer=window.setInterval("show()",3000);
+			
+			function start(){
+				timer=window.setInterval("show()",3000);
+			}
+		</script>
 <script src="../public/js/jquery-1.12.4.min.js"></script>
 <script src="../public/js/bootstrap.min.js"></script>
 </body>

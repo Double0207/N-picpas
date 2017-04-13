@@ -237,6 +237,9 @@ footer .container{
     margin-left: 48px;
 
 }
+.col-md-12{
+    align-content: center;
+}
 footer p.title {
     line-height: 32px;
     /* border-bottom: 1px solid #666; */

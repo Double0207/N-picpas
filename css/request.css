@@ -44,7 +44,7 @@ div {
 }
 body {
     /*width: 1349px;*/
-    /*height: 3800px;*/
+    height: 3500px;
     overflow-x: hidden;
     background-position: center top;
     line-height: 1.42857143;
@@ -369,15 +369,15 @@ ul.pagination {
 
 /*footer*/
 footer{
-    height: 600px;
-    position: relative;
-    top:-200px;
+    /*height: 600px;*/
+    /*position: relative;*/
+    /*top:-200px;*/
     background-color: #f7f7f7;
     color: #262b31;
     padding: 40px 0;
 }
 .section-grey{
-    height: 600px;
+    height: 620px;
 }
 .social-links{
     margin-top: 10px;

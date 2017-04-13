@@ -34,6 +34,7 @@
     top:12px;
 }
 * {
+	
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -53,3 +54,43 @@ body {
 .btn-lg{
     background-color: #0C8484;
 }
+
+
+
+
+
+
+
+			.scroll_mid{
+				width:1349px;
+				height: 350px;
+				float:left;
+				position:relative;
+			}
+
+			#pic{
+				float:left;
+				width:1349px;
+				height: 500px;
+			}
+			#scroll_number{
+				clear:both;
+				padding-right:10px;
+				display:inline;
+			}
+			#scroll_number li{
+				width:20px;
+				line-height: 16px;
+				text-align: center;
+				border:solid 1px #999;
+				margin-top:5px;
+				font-size:12px;
+				float:left;
+			}
+			.scroll_number_out{
+				background-color: #f2f2f3;
+			}
+			.scroll_number_over{
+				background-color: #f96;
+				color:#fff;
+			}

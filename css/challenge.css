@@ -434,51 +434,33 @@ a {
 
 
 footer{
+    /*height: 600px;*/
     position: relative;
-    top:270px;
-    bottom: 0;
-    height: 701px;
+    top:260px;
     background-color: #f7f7f7;
     color: #262b31;
-}
-.container {
-    padding-right: 15px;
-    padding-left:0px;
-    margin-right: auto;
-    margin-left: auto;
+    padding: 40px 0;
 }
 .section-grey{
-    background-color: #F7F7F7;
-    padding: 100px 0;
-    height: 850px;
+    height: 620px;
+}
+.social-links{
+    margin-top: 10px;
+}
+.line{
+    height: 3px;
+    padding: 30px 0;
+}
+.row1{
+    margin-left: 48px;
 }
 footer p.title {
     line-height: 32px;
+    /* border-bottom: 1px solid #666; */
+    /* color: #0c8484; */
     font-weight: 700;
     width: 263px;
     height: 32px;
-}
-#sticky-footer {
-    display: none;
-    width: 100%;
-    background-color: gray;
-    opacity: .8;
-    filter: alpha(opacity=80);
-    -moz-opacity: 0.8;
-    position: fixed;
-    _position: absolute;
-    overflow: hidden;
-    height: 38px;
-    bottom: 0;
-    z-index: 99999;
-    line-height: 38px;
-    float: left;
-    /*_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));*/
-}
-p.text-center {
-    text-align: center;
-    margin-top: 0;
-    margin-left: -20px;
 }
 p {
     margin: 0 0 10px;
@@ -490,9 +472,11 @@ a {
     color: #42BFDF;
     text-decoration: none;
 }
-.col-md-12{
-    height: 46px;
-    padding: 0px 15px;
+.text-center{
+    height: auto;
+}
+.text-center2{
+    text-align: center;
 }
 
 
