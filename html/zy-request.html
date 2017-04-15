@@ -55,17 +55,21 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
                 <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="上传照片">
-                    <a onclick="showEditPhotoDialog()">
+                    <a href="">
                         <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload"></span>
                     </a>
                 </li>
                 <li class="nav-link-icon" id="shopping-cart-nav-icon2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="查看购物车">
-                    <a href="zy-shopping.html"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a href="zy-shopping.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
                 </li>
                 <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="发布需求">
-                    <a href="zy-request.html"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                    <a href="zy-request.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+                    </a>
                 </li>
-                <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="你有0条未读消息">
+                <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" 你有0条未读消息>
                     <a href="zy-information.html">
                         <span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>
                     </a>
@@ -73,7 +77,7 @@
                 <li class="nav-avatar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="我的主页">
                     <p class="navbar-text" id="openUserActionsBarButton">
                         <img alt="1056737150" class="userAvatar avatar24 no-action" src="../images/avatar.jpg">
-                        <i class="fa fa-angle-right"></i>
+                        <span class="glyphicon glyphicon-menu-right"></span>
                     </p>
                 </li>
             </ul>
@@ -128,7 +132,6 @@
                                                 <option value="21">21天</option>
                                                 <option value="30">30天</option>
                                             </select>
-
                                             <p class="help-block help-block-error"></p>
                                         </div>
                                     </div>
@@ -144,311 +147,127 @@
                                 </div>
                                 <div class="form-group field-requestform-use_for required">
                                     <label class="control-label" for="requestform-use_for">照片主要用途</label>
-                                    <input type="text" id="requestform-use_for" class="form-control" name="RequestForm[use_for]" maxlength="50" placeholder="这张照片您将用于...">
-
+                                    <input type="text" id="requestform-use_for" class="form-control"  maxlength="50" placeholder="这张照片您将用于...">
                                     <p class="help-block help-block-error"></p>
                                 </div>
                                 <div class="form-group field-requestform-styles required">
-                                    <label class="control-label" for="requestform-styles">照片风格</label>
-                                    <input type="hidden" name="RequestForm[styles]" value=""/>
-                                    <select id="requestform-styles" class="form-control" name="RequestForm[styles][]" multiple="" size="1" style="display: none;">
-                                        <option value="1">城市</option>
-                                        <option value="2">抽象</option>
-                                        <option value="3">创意</option>
-                                        <option value="4">动物</option>
-                                        <option value="5">地标性建筑</option>
-                                        <option value="6">儿童</option>
-                                        <option value="7">工业</option>
-                                        <option value="8">观念</option>
-                                        <option value="9">婚礼</option>
-                                        <option value="10">互联网</option>
-                                        <option value="11">街区</option>
-                                        <option value="12">节日</option>
-                                        <option value="13">家庭</option>
-                                        <option value="14">季节</option>
-                                        <option value="15">教育</option>
-                                        <option value="16">金融</option>
-                                        <option value="17">结构</option>
-                                        <option value="18">建筑</option>
-                                        <option value="19">静物</option>
-                                        <option value="20">技术</option>
-                                        <option value="21">聚会</option>
-                                        <option value="22">科学</option>
-                                        <option value="23">科技</option>
-                                        <option value="24">空中</option>
-                                        <option value="25">空间</option>
-                                        <option value="26">旅行</option>
-                                        <option value="27">名人</option>
-                                        <option value="28">冒险</option>
-                                        <option value="29">美妆</option>
-                                        <option value="30">汽车</option>
-                                        <option value="31">情侣</option>
-                                        <option value="32">亲情</option>
-                                        <option value="33">青年文化</option>
-                                        <option value="34">人像</option>
-                                        <option value="35">人类</option>
-                                        <option value="36">时尚</option>
-                                        <option value="37">水下</option>
-                                        <option value="38">商业贸易</option>
-                                        <option value="39">食物饮品</option>
-                                        <option value="40">生活方式</option>
-                                        <option value="41">社会纪实</option>
-                                        <option value="42">体育</option>
-                                        <option value="43">文学</option>
-                                        <option value="44">未来</option>
-                                        <option value="45">休闲</option>
-                                        <option value="46">乡村</option>
-                                        <option value="47">艺术</option>
-                                        <option value="48">幽默</option>
-                                        <option value="49">音乐</option>
-                                        <option value="50">娱乐</option>
-                                        <option value="51">运输</option>
-                                        <option value="52">医疗保健</option>
-                                        <option value="53">野生动物</option>
-                                        <option value="54">自然</option>
-                                        <option value="55">植物</option>
-                                        <option value="56">装饰</option>
-                                        <option value="57">职业</option>
-                                        <option value="58">宗教</option>
-                                    </select>
-                                    <div class="makeDropdown-element">
-                                        <div class="clearfix form-control-static"></div>
-                                        <ul class="clearfix" style="display: none">
-                                            <li data-id="1">城市</li>
-                                            <li data-id="2">抽象</li>
-                                            <li data-id="3">创意</li>
-                                            <li data-id="4">动物</li>
-                                            <li data-id="5">地标性建筑</li>
-                                            <li data-id="6">儿童</li>
-                                            <li data-id="7">工业</li>
-                                            <li data-id="8">观念</li>
-                                            <li data-id="9">婚礼</li>
-                                            <li data-id="10">互联网</li>
-                                            <li data-id="11">街区</li>
-                                            <li data-id="12">节日</li>
-                                            <li data-id="13">家庭</li>
-                                            <li data-id="14">季节</li>
-                                            <li data-id="15">教育</li>
-                                            <li data-id="16">金融</li>
-                                            <li data-id="17">结构</li>
-                                            <li data-id="18">建筑</li>
-                                            <li data-id="19">静物</li>
-                                            <li data-id="20">技术</li>
-                                            <li data-id="21">聚会</li>
-                                            <li data-id="22">科学</li>
-                                            <li data-id="23">科技</li>
-                                            <li data-id="24">空中</li>
-                                            <li data-id="25">空间</li>
-                                            <li data-id="26">旅行</li>
-                                            <li data-id="27">名人</li>
-                                            <li data-id="28">冒险</li>
-                                            <li data-id="29">美妆</li>
-                                            <li data-id="30">汽车</li>
-                                            <li data-id="31">情侣</li>
-                                            <li data-id="32">亲情</li>
-                                            <li data-id="33">青年文化</li>
-                                            <li data-id="34">人像</li>
-                                            <li data-id="35">人类</li>
-                                            <li data-id="36">时尚</li>
-                                            <li data-id="37">水下</li>
-                                            <li data-id="38">商业贸易</li>
-                                            <li data-id="39">食物饮品</li>
-                                            <li data-id="40">生活方式</li>
-                                            <li data-id="41">社会纪实</li>
-                                            <li data-id="42">体育</li>
-                                            <li data-id="43">文学</li>
-                                            <li data-id="44">未来</li>
-                                            <li data-id="45">休闲</li>
-                                            <li data-id="46">乡村</li>
-                                            <li data-id="47">艺术</li>
-                                            <li data-id="48">幽默</li>
-                                            <li data-id="49">音乐</li>
-                                            <li data-id="50">娱乐</li>
-                                            <li data-id="51">运输</li>
-                                            <li data-id="52">医疗保健</li>
-                                            <li data-id="53">野生动物</li>
-                                            <li data-id="54">自然</li>
-                                            <li data-id="55">植物</li>
-                                            <li data-id="56">装饰</li>
-                                            <li data-id="57">职业</li>
-                                            <li data-id="58">宗教</li>
-                                        </ul>
-                                    </div>
+                                    <label class="control-label" >照片风格</label>
+                                    <input type="text" id="requestform-use_styles" class="form-control"  maxlength="50" placeholder="输入图片风格...">
                                     <p class="help-block help-block-error"></p>
-                                </div>
-                                <div class="form-group controls">
-                                    <div class="form-group field-requestform-description required">
-                                        <label class="control-label" for="requestform-description">再给个细节描述</label>
-                                        <textarea id="requestform-description" name="RequestForm[description]" rows="6" style="visibility: hidden; display: none;"></textarea><div id="cke_requestform-description" class="cke_1 cke cke_reset cke_chrome cke_editor_requestform-description cke_ltr cke_browser_webkit" dir="ltr" lang="zh-cn" role="application" aria-labelledby="cke_requestform-description_arialbl"><span id="cke_requestform-description_arialbl" class="cke_voice_label">所见即所得编辑器, requestform-description</span>
-                                        <div class="cke_inner cke_reset" role="presentation">
-                                            <span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_8" class="cke_voice_label">工具栏</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_8" onmousedown="return false;">
-                                                <span id="cke_9" class="cke_toolbar" aria-labelledby="cke_9_label" role="toolbar">
-                                                    <span id="cke_9_label" class="cke_voice_label">基本格式</span>
-                                                    <span class="cke_toolbar_start"></span>
-                                                    <span class="cke_toolgroup" role="presentation">
-                                                        <a id="cke_10" class="cke_button cke_button__bold  cke_button_off" href="javascript:void('加粗')" title="加粗" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_10_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(1,event);" onfocus="return CKEDITOR.tools.callFunction(2,event);" onclick="CKEDITOR.tools.callFunction(3,this);return false;">
-                                                            <span class="cke_button_icon cke_button__bold_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -24px;background-size:auto;">&nbsp;</span>
-                                                            <span id="cke_10_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">加粗</span>
-                                                        </a>
-                                                        <a id="cke_11" class="cke_button cke_button__italic  cke_button_off" href="javascript:void('倾斜')" title="倾斜" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(4,event);" onfocus="return CKEDITOR.tools.callFunction(5,event);" onclick="CKEDITOR.tools.callFunction(6,this);return false;">
-                                                            <span class="cke_button_icon cke_button__italic_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -48px;background-size:auto;">&nbsp;</span>
-                                                            <span id="cke_11_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">倾斜</span>
-                                                        </a>
-                                                        <a id="cke_12" class="cke_button cke_button__underline  cke_button_off" href="javascript:void('下划线')" title="下划线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(7,event);" onfocus="return CKEDITOR.tools.callFunction(8,event);" onclick="CKEDITOR.tools.callFunction(9,this);return false;">
-                                                            <span class="cke_button_icon cke_button__underline_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -144px;background-size:auto;">&nbsp;</span>
-                                                            <span id="cke_12_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">下划线</span>
-                                                        </a>
-                                                        <a id="cke_13" class="cke_button cke_button__strike  cke_button_off" href="javascript:void('删除线')" title="删除线" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(10,event);" onfocus="return CKEDITOR.tools.callFunction(11,event);" onclick="CKEDITOR.tools.callFunction(12,this);return false;">
-                                                            <span class="cke_button_icon cke_button__strike_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -72px;background-size:auto;">&nbsp;</span>
-                                                            <span id="cke_13_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">删除线</span>
-                                                        </a>
-                                                        <span class="cke_toolbar_separator" role="separator"></span>
-                                                        <a id="cke_14" class="cke_button cke_button__removeformat  cke_button_off" href="javascript:void('清除格式')" title="清除格式" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(13,event);" onfocus="return CKEDITOR.tools.callFunction(14,event);" onclick="CKEDITOR.tools.callFunction(15,this);return false;">
-                                                            <span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -1680px;background-size:auto;">&nbsp;</span>
-                                                            <span id="cke_14_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">清除格式</span>
-                                                        </a>
-                                                    </span>
-                                                    <span class="cke_toolbar_end"></span>
-                                                </span>
-                                                <span id="cke_15" class="cke_toolbar" aria-labelledby="cke_15_label" role="toolbar">
-                                                    <span id="cke_15_label" class="cke_voice_label">颜色</span>
-                                                            <span class="cke_toolbar_start"></span>
-                                                            <span class="cke_toolgroup" role="presentation">
-                                                                <a id="cke_16" class="cke_button cke_button__textcolor cke_button_off " href="javascript:void('文本颜色')" title="文本颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(16,event);" onfocus="return CKEDITOR.tools.callFunction(17,event);" onclick="CKEDITOR.tools.callFunction(18,this);return false;">
-                                                                    <span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -408px;background-size:auto;">&nbsp;</span>
-                                                                    <span id="cke_16_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">文本颜色</span>
-                                                                    <span class="cke_button_arrow"></span></a>
-                                                                <a id="cke_17" class="cke_button cke_button__bgcolor cke_button_off " href="javascript:void('背景颜色')" title="背景颜色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-haspopup="true" onkeydown="return CKEDITOR.tools.callFunction(19,event);" onfocus="return CKEDITOR.tools.callFunction(20,event);" onclick="CKEDITOR.tools.callFunction(21,this);return false;">
-                                                                    <span class="cke_button_icon cke_button__bgcolor_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -384px;background-size:auto;">&nbsp;</span>
-                                                                    <span id="cke_17_label" class="cke_button_label cke_button__bgcolor_label" aria-hidden="false">背景颜色</span>
-                                                                    <span class="cke_button_arrow"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_18" class="cke_toolbar" aria-labelledby="cke_18_label" role="toolbar">
-                                                                    <span id="cke_18_label" class="cke_voice_label">链接</span>
-                                                                    <span class="cke_toolbar_start"></span>
-                                                                    <span class="cke_toolgroup" role="presentation"><a id="cke_19" class="cke_button cke_button__link  cke_button_off" href="javascript:void('插入/编辑超链接')" title="插入/编辑超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(22,event);" onfocus="return CKEDITOR.tools.callFunction(23,event);" onclick="CKEDITOR.tools.callFunction(24,this);return false;">
-                                                                    <span class="cke_button_icon cke_button__link_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -1248px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__link_label" aria-hidden="false">插入/编辑超链接</span></a><a id="cke_20" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('取消超链接')" title="取消超链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_20_label" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(25,event);" onfocus="return CKEDITOR.tools.callFunction(26,event);" onclick="CKEDITOR.tools.callFunction(27,this);return false;">
-                                                                        <span class="cke_button_icon cke_button__unlink_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -1272px;background-size:auto;">&nbsp;</span><span id="cke_20_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">取消超链接</span></a><a id="cke_21" class="cke_button cke_button__anchor  cke_button_off" href="javascript:void('插入/编辑锚点链接')" title="插入/编辑锚点链接" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-haspopup="false" onkeydown="return CKEDITOR.tools.callFunction(28,event);" onfocus="return CKEDITOR.tools.callFunction(29,event);" onclick="CKEDITOR.tools.callFunction(30,this);return false;">
-                                                                        <span class="cke_button_icon cke_button__anchor_icon" style="background-image:url(http://www.picpas.com/assets/28ac788f/plugins/icons.png?t=F0RD);background-position:0 -1224px;background-size:auto;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__anchor_label" aria-hidden="false">插入/编辑锚点链接</span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 200px;">
-                                                                        <span id="cke_25" class="cke_voice_label">按 ALT+0 获得帮助</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" title="所见即所得编辑器, requestform-description" aria-describedby="cke_25" tabindex="0" allowtransparency="true" style="width: 100%; height: 100%;"></iframe></div></div></div>
-
-                                        <p class="help-block help-block-error"></p>
-                                    </div>
-                                        <p class="help-block text-muted">尽量细化您的需求，这样有利于摄影师为您更好的创作。比如：主题细节的阐述、光线等</p>
                                 </div>
 
                                 <div class="form-group example-group">
                                     <label >
                                         示例图片 <span class="text-muted">(推荐，最低400像素的jpg文件)</span>
-                                        <a href="#help" class="sw-icon sw-icon-info" data-tooltip="inspiration_images" data-original-title="" title="">
-                                            <i class="fa fa-info-circle"></i>
+                                        <a href="#help" class="sw-icon sw-icon-info" data-tooltip="inspiration_images" >
+                                            <span class="glyphicon glyphicon-info-sign"></span>
                                         </a>
                                     </label>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <input type="hidden" id="exampleInput0" name="RequestForm[examples][cover]" value="">
+                                            <input type="hidden" id="exampleInput0" >
 
                                             <div class="request-example-edit-preview">
                                                 <div class="thumbnail-box">
-                                                    <img class="img-thumbnail" id="requestExampleImage0" src="images/substitutes/image-600.png" alt=": 需求封面">
+                                                    <img class="img-thumbnail" id="requestExampleImage0" src="../images/image-600%20(1).png" alt=": 需求封面">
                                                     <div class="in-thumbnail-box-process-bar" id="uploadButton-progress-bar0">
                                                         <div class="uploadify-progress">
-                                                            <div class="uploadify-progress-bar"><!--Progress Bar--></div>
+                                                            <div class="uploadify-progress-bar"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="uploadExampleButtonBox uploadExampleButtonBox0 text-center">
-                                                    <div class="example-action add" onclick="$(this).next().click()" id="uploadButton0">
-                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    <div class="example-action add"  id="uploadButton0">
+                                                        <span class="glyphicon glyphicon-plus"></span>
                                                     </div>
-                                                    <!--<button type="button" onclick="$(this).next().click()" class="btn btn-white" id="uploadButton0">+ 需求封面</button>-->
-                                                    <input id="uploadFile0" type="file" name="uploadFile0">
-                                                    <!--<button type="button" class="btn btn-remove" style="display: none" id="removeButton0">- 删除</button>-->
                                                     <div class="example-action-remove" style="display: none" id="removeButton0">
-                                                        <i class="fa fa-trash fa-2x"></i>
+                                                        <span class="glyphicon glyphicon-plus"></span>
                                                     </div>
                                                 </div>
-                                            </div>                                    </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
-                                            <input type="hidden" id="exampleInput1" name="RequestForm[examples][0]" value="">
+                                            <input type="hidden" id="exampleInput1" name="RequestForm[examples][0]" >
 
                                             <div class="request-example-edit-preview">
                                                 <div class="thumbnail-box">
-                                                    <img class="img-thumbnail" id="requestExampleImage1" src="images/substitutes/image-600.png" alt=": 示例图片">
+                                                    <img class="img-thumbnail" id="requestExampleImage1" src="../images/image-600%20(1).png" alt=": 示例图片">
                                                     <div class="in-thumbnail-box-process-bar" id="uploadButton-progress-bar1">
                                                         <div class="uploadify-progress">
-                                                            <div class="uploadify-progress-bar"><!--Progress Bar--></div>
+                                                            <div class="uploadify-progress-bar"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="uploadExampleButtonBox uploadExampleButtonBox1 text-center">
-                                                    <div class="example-action add" onclick="$(this).next().click()" id="uploadButton1">
-                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    <div class="example-action add"  id="uploadButton1">
+                                                        <span class="glyphicon glyphicon-plus"></span>
                                                     </div>
-                                                    <!--<button type="button" onclick="$(this).next().click()" class="btn btn-white" id="uploadButton1">+ 示例图片</button>-->
+
                                                     <input id="uploadFile1" type="file" name="uploadFile1">
-                                                    <!--<button type="button" class="btn btn-remove" style="display: none" id="removeButton1">- 删除</button>-->
+
                                                     <div class="example-action-remove" style="display: none" id="removeButton1">
-                                                        <i class="fa fa-trash fa-2x"></i>
+                                                        <span class="glyphicon glyphicon-plus"></span>
                                                     </div>
                                                 </div>
-                                            </div>                                    </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-4">
-                                            <input type="hidden" id="exampleInput2" name="RequestForm[examples][1]" value="">
+                                            <input type="hidden" id="exampleInput2">
 
                                             <div class="request-example-edit-preview">
                                                 <div class="thumbnail-box">
-                                                    <img class="img-thumbnail" id="requestExampleImage2" src="images/substitutes/image-600.png" alt=": 示例图片">
+                                                    <img class="img-thumbnail" id="requestExampleImage2" src="../images/image-600%20(1).png" alt=": 示例图片">
                                                     <div class="in-thumbnail-box-process-bar" id="uploadButton-progress-bar2">
                                                         <div class="uploadify-progress">
-                                                            <div class="uploadify-progress-bar"><!--Progress Bar--></div>
+                                                            <div class="uploadify-progress-bar"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="uploadExampleButtonBox uploadExampleButtonBox2 text-center">
-                                                    <div class="example-action add" onclick="$(this).next().click()" id="uploadButton2">
-                                                        <i class="fa fa-plus fa-2x"></i>
+                                                    <div class="example-action add"  id="uploadButton2">
+                                                        <span class="glyphicon glyphicon-plus"></span>
                                                     </div>
-                                                    <!--<button type="button" onclick="$(this).next().click()" class="btn btn-white" id="uploadButton2">+ 示例图片</button>-->
                                                     <input id="uploadFile2" type="file" name="uploadFile2">
-                                                    <!--<button type="button" class="btn btn-remove" style="display: none" id="removeButton2">- 删除</button>-->
                                                     <div class="example-action-remove" style="display: none" id="removeButton2">
-                                                        <i class="fa fa-trash fa-2x"></i>
+                                                       <span class="glyphicon glyphicon-plus "></span>
                                                     </div>
                                                 </div>
-                                            </div>                                    </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                             </fieldset>
                         </div>
                     </div>
-                    <div class="col-md-4 margin-bottom">
+                    <div class="col-md-4 margin-bottom2">
                         <div class="request-actions text-center">
                             <div class="pad">
                                 <div id="request-payout-custom">
-                                    <!--                            <div class="price-label margin-top">
-                                                                    Type: <strong><span data-container="package-label">Challenge</span></strong>
-                                                                </div>
-                                                                <hr>-->
                                     <h4 class="price-label">
                                         建议每张照片价格
-                                        <a href="#help" class="sw-icon sw-icon-info" data-tooltip="price_per_photo" data-original-title="" title="">
-                                            <i class="fa fa-info-circle"></i>
+                                        <a href="#help" class="sw-icon sw-icon-info" data-tooltip="price_per_photo" >
+                                            <span class="glyphicon glyphicon-info-sign"></span>
                                         </a>
                                     </h4>
                                     <div class="form-group controls">
                                         <div class="input-group">
                                             <div class="input-group-addon dollars">￥</div>
                                             <input name="payout_custom" type="hidden" value="0">
-                                            <input type="text" id="input-payout" class="form-control" name="RequestForm[price]" value="100" maxlength="4" placeholder="75">                                    <div class="input-group-addon edit" data-edit="price"><i class="fa fa-pencil"></i></div>
+                                            <input type="text" id="input-payout" class="form-control" value="100" maxlength="4" placeholder="75">
+                                            <a class="input-group-addon edit" data-edit="price">
+                                               <img src="../images/pencil.png">
+                                            </a>
                                         </div>
 
                                     </div>
-                                    <h4 class="price-label offer" data-container="payout-error">
+                                    <h4 class="price-label offer">
                                         需求最低价格为 <strong>￥<span data-container="payout">100</span></strong>.
                                     </h4>
                                 </div>
-                                <button type="submit" class="sw-btn btn-block sw-btn-big sw-btn-success" data-action="request-create-review" onclick="var f=$('#edit-request-form');f.attr('action',f.attr('data-action'));f.attr('target', '_self');">
-                                    下一步                        </button>
+                                <button type="submit" class="sw-btn btn-block sw-btn-big sw-btn-success" data-action="request-create-review" >
+                                    下一步
+                                </button>
 
                             </div>
                         </div>
@@ -457,100 +276,7 @@
                 </div>
             </div>
         </form>
-        <script type="text/javascript">
-            function removeDraftExample(objId) {
-                var obj = $(objId);
-                if (obj.val().length && obj.val() != obj.attr('org')) {
-                    $.post($('base').attr('href') + 'uploader/trash', {key: obj.val()}, function(response){});
-                }
-            }
-            $(document).ready(function(){
-                $('#requestform-styles').makeDropdown();
-                $("#requestform-end_time").datetimepicker({lang: 'ch', timepicker: false, format:'Y-m-d', minDate: '2017/04/09', maxDate: '2017/05/08'});
-                $('#edit-request-form').bind('beforeSubmit', function(){$(this).find('button[type=submit]:first').attr('disabled', 'disabled')});
-                $('#uploadFile0').fileupload(getUploadConfig('example', {
-                    minSize: 10 * 1024,
-                    minWidth: 400,
-                    minHeight: 400,
-                    uploadButton: '#uploadButton0',
-                    uploadProcessBar: '#uploadButton-progress-bar0',
-                    done: function(e, data) {
-                        if (data.result.success) {
-                            $('#requestExampleImage0').attr('src', data.result.src);
-                            removeDraftExample('#exampleInput0');
-                            $('#exampleInput0').val(data.result.key);
-                            $('#uploadButton0').show();
-                            $('#removeButton0').show();
-                            $('.uploadExampleButtonBox0 .example-action').hide();
-                        }
-                    }
-                }));
 
-                $('#removeButton0').click(function(){
-//        fileKey = $('#exampleInput0').val();
-//        fileSrc = $('#requestExampleImage0').attr('src');
-                    removeDraftExample('#exampleInput0');
-                    $('#exampleInput0').val('');
-                    $('#requestExampleImage0').attr('src', 'images/substitutes/image-600.png');
-                    $('#removeButton0').hide();
-                    $('.uploadExampleButtonBox0 .example-action').show();
-                });
-                $('#uploadFile1').fileupload(getUploadConfig('example', {
-                    minSize: 10 * 1024,
-                    minWidth: 400,
-                    minHeight: 400,
-                    uploadButton: '#uploadButton1',
-                    uploadProcessBar: '#uploadButton-progress-bar1',
-                    done: function(e, data) {
-                        if (data.result.success) {
-                            $('#requestExampleImage1').attr('src', data.result.src);
-                            removeDraftExample('#exampleInput1');
-                            $('#exampleInput1').val(data.result.key);
-                            $('#uploadButton1').show();
-                            $('#removeButton1').show();
-                            $('.uploadExampleButtonBox1 .example-action').hide();
-                        }
-                    }
-                }));
-
-                $('#removeButton1').click(function(){
-//        fileKey = $('#exampleInput1').val();
-//        fileSrc = $('#requestExampleImage1').attr('src');
-                    removeDraftExample('#exampleInput1');
-                    $('#exampleInput1').val('');
-                    $('#requestExampleImage1').attr('src', 'images/substitutes/image-600.png');
-                    $('#removeButton1').hide();
-                    $('.uploadExampleButtonBox1 .example-action').show();
-                });
-                $('#uploadFile2').fileupload(getUploadConfig('example', {
-                    minSize: 10 * 1024,
-                    minWidth: 400,
-                    minHeight: 400,
-                    uploadButton: '#uploadButton2',
-                    uploadProcessBar: '#uploadButton-progress-bar2',
-                    done: function(e, data) {
-                        if (data.result.success) {
-                            $('#requestExampleImage2').attr('src', data.result.src);
-                            removeDraftExample('#exampleInput2');
-                            $('#exampleInput2').val(data.result.key);
-                            $('#uploadButton2').show();
-                            $('#removeButton2').show();
-                            $('.uploadExampleButtonBox2 .example-action').hide();
-                        }
-                    }
-                }));
-
-                $('#removeButton2').click(function(){
-//        fileKey = $('#exampleInput2').val();
-//        fileSrc = $('#requestExampleImage2').attr('src');
-                    removeDraftExample('#exampleInput2');
-                    $('#exampleInput2').val('');
-                    $('#requestExampleImage2').attr('src', 'images/substitutes/image-600.png');
-                    $('#removeButton2').hide();
-                    $('.uploadExampleButtonBox2 .example-action').show();
-                });
-            });
-        </script>
         <div id="flashMessagesBox"></div>
     </div>
 </div>

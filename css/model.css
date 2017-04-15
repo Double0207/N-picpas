@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
+    background-image: url("../images/pic_2.jpg");
 }
 .modal-open .modal {
     overflow-x: hidden;
@@ -281,7 +282,7 @@ label {
 }
 .form-control {
     display: block;
-    width: 100%;
+    width: 90%;
     /*height: 34px;*/
     /*padding: 6px 12px;*/
     font-size: 14px;
@@ -291,7 +292,7 @@ label {
 }
 
 .request{
-    width: 380px;
+    width: 370px;
     height: 70px;
 }
 input #photoform-title{

@@ -55,15 +55,19 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
                 <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="上传照片">
-                    <a onclick="showEditPhotoDialog()">
+                    <a >
                         <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload"></span>
                     </a>
                 </li>
                 <li class="nav-link-icon" id="shopping-cart-nav-icon2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="查看购物车">
-                    <a href="zy-shopping.html"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a href="zy-shopping.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
                 </li>
                 <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="发布需求">
-                    <a href="zy-request.html"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                    <a href="zy-request.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+                    </a>
                 </li>
                 <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="你有0条未读消息">
                     <a href="zy-information.html">
@@ -73,7 +77,7 @@
                 <li class="nav-avatar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="我的主页">
                     <p class="navbar-text" id="openUserActionsBarButton">
                         <img alt="1056737150" class="userAvatar avatar24 no-action" src="../images/avatar.jpg">
-                        <i class="fa fa-angle-right"></i>
+                        <span class="glyphicon glyphicon-menu-right"></span>
                     </p>
                 </li>
             </ul>
@@ -129,32 +133,9 @@
                             <strong class="visible-xs-inline">微信账号</strong>
                         </a>
                     </div>
-                    <!--分享-->
-                    <!--<div class="share-links">
-                        <span class="pull-left">分享到</span>
-                        <div class="bshare-custom icon-medium-plus pull-right">
-                            <a title="分享到微信" class="bshare-weixin"></a>
-                            <a title="分享到QQ空间" class="bshare-qzone"></a>
-                            <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
-                            <a title="分享到豆瓣" class="bshare-douban"></a>
-                             a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a
-                        </div>
-                    </div>-->
-                    <!--分享-->
 
-                    <!--<script type="text/javascript">-->
-                        <!--$(function(){-->
-                            <!--$('.btn-sn-weibo').click(function(){-->
-                                <!--bShare.share(event, 'sinaminiblog', 0);-->
-                            <!--});-->
-                            <!--$('.btn-sn-qq').click(function(){-->
-                                <!--bShare.share(event, 'qzone', 0);-->
-                            <!--});-->
-                            <!--$('.btn-sn-wechat').click(function(){-->
-                                <!--bShare.share(event, 'weixin', 0);-->
-                            <!--});-->
-                        <!--});-->
-                    <!--</script>            &lt;!&ndash;分享&ndash;&gt;-->
+
+
                 </div>
             </div>
         </div>
@@ -163,7 +144,8 @@
 
         <div id="user_info_box">
             <div class="hidden">
-                <form id="w0" action="#" method="GET" data-pjax="1">	<input id="search-model" name="search-model" value="p">
+                <form id="w0" action="#" method="GET" data-pjax="1">
+                    <input id="search-model" name="search-model" value="p">
                     <input id="photofilter-status" type="hidden" name="PhotoFilter[status]" value="">
                     <input id="userfilter-myFollows" type="hidden" name="UserFilter[myFollows]" value="">
                 </form></div>
@@ -176,10 +158,8 @@
                     <a href="#" aria-controls="3" role="tab">
                         高级销售 0        </a>
                 </li>
-                <!--    <li class="">
-                        <a onclick="$('#search-model').val('p');var i=$('#photofilter-status');i.val($(this).attr('aria-controls'));i.parent().submit();" aria-controls="PhotoPaid" role="tab" data-toggle="tab">
-                            售出的照片 0        </a>
-                    </li>-->
+
+
                 <li class="">
                     <a href="#" aria-controls="n" role="tab">
                         已提名 0        </a>
@@ -207,29 +187,7 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            function initUserPhotos() {
-                $('div.user-list .user-photos img').click(function(){
-                    if($('div.user-list .user-photos img.loading').length > 0) return;
-                    var self = $(this);
-                    $(this).addClass('loading');
-                    $.get('photo/view/photo/' + $(this).attr('item-id') + '-' + $(this).attr('item-name'), function(response){
-                        self.removeClass('loading');
-                        $.popupModal(response);
-                    });
-                });
-            }
-            $(document).ready(function(){
-                initPhotoList();
-                initUserPhotos();
-                $("#user_info_box").on("pjax:end", function(){
-                    try {
-                        initPhotoList();
-                        initUserPhotos();
-                    } catch(e) {}
-                });
-            });
-        </script>                    <div id="flashMessagesBox"></div>
+        <div id="flashMessagesBox"></div>
     </div>
 </div>
 

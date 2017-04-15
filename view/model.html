@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="uploadExampleButtonBox text-center">
-                                <div class="example-action add" onclick="$(this).next().click()" id="uploadPhotoButton">
+                                <div class="example-action add"  id="uploadPhotoButton">
                                     <i class="fa fa-plus fa-2x"></i>
                                 </div>
                                 <input id="uploadPhotoFile" type="file" name="uploadPhotoFile">
@@ -92,124 +92,9 @@
         </div>
             <div class="modal-footer"><div class="for-dialog-footer">
                 <div class="text-center">
-                    <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default" onclick="$('#editPhotoForm').submit(); return false;" type="button">保存</button>
+                    <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default"  type="button">保存</button>
                 </div>
-                <script type="text/javascript">
-                    function trashPhotoDraft(fKey) {
-                        $.post('uploader/trash', {key: fKey}, function(response){});
-                    }
-                    function initPhotoUploader() {
-                        $('#uploadPhotoFile').fileupload(getUploadConfig('photo', {
-                            minSize: 400 * 1024,
-                            minWidth: 800,
-                            minHeight: 800,
-                            uploadButton: '#uploadPhotoButton',
-                            uploadProcessBar: '#uploadPhotoButton-progress-bar',
-                            done: function(e, data) {
-                                if (data.result.success) {
-                                    $('.uploadExampleButtonBox').hide();
-                                    $('#photoImage').attr('src', data.result.src);
-                                    if ($('#photoform-source_file').val()) {
-                                        trashPhotoDraft($('#photoform-source_file').val());
-                                    }
-                                    $('#photoform-source_file').val(data.result.key);
-                                    $('#uploadPhotoButton').show();
-                                }
-                            }
-                        }));
-                    }
-                    function submitEditPhotoForm() {
-                        var btn = $('#submitPhotoForm');
-                        if (btn.text().substr(-3) == '...') return false;
-                        var result = true;
-                        var ele = $('#photoform-copyright');
-                        var p = ele.parents('div.form-group:first');
-                        p.find('div.help-block').html('');
-                        if (ele.length && ele.val() < 1) {
-                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
-                            result = false;
-                        }
 
-                        ele = $('#photoform-portrait_copyright');
-                        p = ele.parents('div.form-group:first');
-                        p.find('div.help-block').html('');
-                        if ($('#photoform-has_portrait').val() > 0 && ele.val() < 1) {
-                            showFlashMessage({success: false, message: '请确认' + p.find('label').text()});
-                            result = false;
-                        }
-
-                        ele = $('#photoform-source_file');
-                        if (ele.val().length < 1) {
-                            showFlashMessage({success: false, message: '请上传照片，或等待照片上传完毕'});
-                            result = false;
-                        }
-
-                        if (!$('input[name="PhotoForm[copyright]"]').is(':checked')) {
-                            showFlashMessage({success: false, message: '请确认版权许可，未经版权许可不允许上传'});
-                            result = false;
-                        }
-
-                        if ($('input[name="PhotoForm[has_portrait]"]:checked').val() === '1') {
-                            if (!$('input[name="PhotoForm[portrait_copyright]"]').is(':checked')) {
-                                showFlashMessage({success: false, message: '请对有可识别人像或物品的照片进行授权'});
-                                result = false;
-                            }
-                        }
-
-                        if ($('#photoform-title').val().length < 1) {
-                            showFlashMessage({success: false, message: '请填写照片主题'});
-                            result = false;
-                        }
-
-                        if (result) {
-                            var btnText = btn.text();
-                            btn.text(btnText + '...');
-                        } else {
-                            return false;
-                        }
-                        var form = $('#editPhotoForm');
-                        $.post(form.attr('action'), form.serialize(), function(response){
-                            btn.text(btnText);
-                            if (typeof response == 'string') {
-                                if ($('#editPhotoWidget').length) {
-                                    $('#editPhotoWidget').parent().html(response);
-                                } else {
-                                    $.popupModal(response);
-                                }
-                            } else {
-                                showFlashMessage(response);
-                                try {
-                                    afterSavePhoto(response.id, response.is_new);
-                                } catch(e) {
-                                    window.location.reload();
-                                }
-                            }
-                        });
-                        return false;
-                    }
-                    $(document).ready(function(){
-                        initPhotoUploader();
-                        $('#editPhotoForm').submit(submitEditPhotoForm);
-                        $('input.switchAble').switchButton();
-                        $('#photoform-tags').makeDropdown({freeEdit: true, inputBoxTpl: '<label style="margin-right: 20px;"></label>', buttonTpl: '<button class="btn btn-default btn-sm" type="button">+关键字</button>'});
-
-                        // disable Esc and click page space to close modal
-                        $('#dialogModal').modal({backdrop: 'static', keyboard: false});
-
-                        // show or hide portrait_copyright according to has_portrait options
-                        $('.field-photoform-portrait_copyright').hide();
-                        $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
-
-                        $('input[name="PhotoForm[has_portrait]"]').click(function(){
-                            if ($(this).val() == 1) {
-                                $('.field-photoform-portrait_copyright').show();
-                            } else {
-                                $('.field-photoform-portrait_copyright').hide();
-                                $('input[name="PhotoForm[portrait_copyright]"]').attr("checked", false);
-                            }
-                        });
-                    });
-                </script>
             </div></div>
         </div>
     </div>
