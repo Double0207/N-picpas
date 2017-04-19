@@ -14,6 +14,7 @@
     <link rel="icon" href="../images/favicon.ico" />
     <link href="../css/main.css" rel="stylesheet" type="text/css">
     <script src="../public/js/jquery-1.12.4.min.js"></script>
+    <script src="../public/js/album.js"></script>
 
 </head>
 <body>
@@ -26,7 +27,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="index.html">
                 <img src="../images/logo-145x28.png" class="nav-logo" alt="www.picpas.com" />
             </a>
         </div>
@@ -45,7 +46,7 @@
                     <a href="photographer.html"> 摄影师 </a>
                 </li>
                 <li>
-                    <a href="photo.html"> 精选专辑 </a>
+                    <a href="album.html"> 精选专辑 </a>
                 </li>
                 <li class="show-under-collapse-in hidden-md hidden-lg">
                     <a href="#"> 登录 </a>
@@ -333,6 +334,158 @@
     </footer>
 
 
+
+<div class="regist" style="display: none;">
+    <div class="regist_bg" ></div>
+    <!-- 注册 -->
+    <div class="registered">
+        <div class="regist-top">
+            <button class="regist_close" type="button">
+                        <span>
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </span>
+            </button>
+        </div>
+        <div class="regist-content">
+            <div>
+                <span class="regist-name-span">创建账号</span>
+            </div>
+            <form action="" class="regist-form"method="post">
+                <div >
+                    <input class="regist-control" id="regist-email" name="regist-email" type="text" placeholder="邮箱地址"/>
+
+                </div>
+                <div>
+                    <input class="regist-control" id="regist-uname" name="regist-uname" type="password" placeholder="用户名"/>
+
+                </div>
+                <div>
+                    <input class="regist-control" id="regist-pwd" name="regist-pwd" type="text" placeholder="登录密码"/>
+
+                </div>
+                <div>
+                    <div class="regist-radio">
+                        <label class="radio-inline">
+                            <input name="regist" value="1" type="radio">
+                            买家
+                        </label>
+                        <label class="radio-inline">
+                            <input name="regist" value="1" type="radio">
+                            摄影师
+                        </label>
+                        <label class="radio-inline">
+                            <input name="regist" value="1" checked="" type="radio">
+                            两者都是
+                        </label>
+                    </div>
+                </div>
+                <div >
+                    <input class="regist-control" id="regist_name" name="regist-name" type="text" placeholder="公司名称"/>
+
+                </div>
+                <div>
+                    <input class="regist-control" id="regist_mobile" name="regist-mobile" type="text" placeholder="手机"/>
+
+                </div>
+                <div>
+                    <input class="regist-control" id="regist_sheying" name="regist-sheying" type="text" placeholder="摄影风格"/>
+                    <p class="help-block help-block-error"></p>
+
+                </div>
+                <div>
+                    <div class="regist-checkbox">
+                        <label class="radio-inline">
+                            <input name="SignupForm[user_type]" value="1" type="checkbox">
+                            我已经仔细阅读、认可并接受《服务条款》中的全部条款。
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="regist-submit"   type="submit">注  册</button>
+                    <a href="#" class="regist-a">已有帐号点此登录</a>
+                    <a href="#" class="regist-a">忘记密码</a>
+                </div>
+            </form>
+            <div class="regist-buttom">
+                <a href="#"  class="regist-buttom-a">无需注册，您可以用社交账号登录</a>
+                <a href="#" class="regist-weibo-a" title="微博帐号">
+                    <span class="regist-weibo-t"></span>
+                    <span class="regist-weibo-bg"></span>
+                </a>
+                <a href="#" class="regist-qq-a" title="QQ帐号">
+                    <span class="regist-weibo-t"></span>
+                    <span class="regist-qq-bg"></span>
+                </a>
+                <a href="#" class="regist-weixin-a" title="微信帐号">
+                    <span class="regist-weibo-t"></span>
+                    <span class="regist-weixin-bg"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="logining" style="display: none;">
+    <div class="login-bg" ></div>
+
+    <!-- 登录 -->
+    <div class="login">
+        <div class="login-top">
+            <button class="login-close" type="button">
+                <span>
+                    <i class="glyphicon glyphicon-remove"></i>
+                </span>
+            </button>
+        </div>
+        <div class="login-content">
+            <div>
+                <span class="login-name-span">登录</span>
+            </div>
+            <form action="" class="login-form" method="post">
+                <div >
+                    <input class="login-control" id="login-email" name="login-email" type="text" placeholder="邮箱地址"/>
+
+                </div>
+
+                <div>
+                    <input class="login-control" id="login-pwd" name="login-pwd" type="text" placeholder="登录密码"/>
+
+                </div>
+
+
+                <div>
+                    <div class="login-checkbox">
+                        <label class="radio-inline">
+                            <input name="" value="1" type="checkbox">
+                            记住我
+                        </label>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="login-submit"   type="submit">登录</button>
+                    <a href="#" class="login-a">立即免费注册</a>
+                    <a href="#" class="login-a">忘记密码</a>
+                </div>
+            </form>
+            <div class="login-buttom">
+                <a href="#"  class="login-buttom-a">无需注册，您可以用社交账号登录</a>
+                <a href="#" class="login-weibo-a" title="微博帐号">
+                    <span class="login-weibo-t"></span>
+                    <span class="login-weibo-bg"></span>
+                </a>
+                <a href="#" class="login-qq-a" title="QQ帐号">
+                    <span class="login-weibo-t"></span>
+                    <span class="login-qq-bg"></span>
+                </a>
+                <a href="#" class="login-weixin-a" title="微信帐号">
+                    <span class="login-weibo-t"></span>
+                    <span class="login-weixin-bg"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="../public/js/jquery-1.12.4.min.js"></script>
     <script src="../public/js/bootstrap.min.js"></script>

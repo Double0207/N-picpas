@@ -439,3 +439,44 @@ label {
 
 
 
+footer{
+    width: 1400px;
+    /*height: 600px;*/
+    position: relative;
+    top:88px;
+    background-color: #f7f7f7;
+    color: #262b31;
+    padding: 40px 0;
+}
+.section-grey{
+    height: 620px;
+    margin-left: 30px;
+}
+.social-links{
+    margin-top: 10px;
+}
+.line{
+    height: 3px;
+    padding: 30px 0;
+}
+footer.row{
+    margin-left: 48px;
+}
+footer p.title {
+    line-height: 32px;
+    /* border-bottom: 1px solid #666; */
+    /* color: #0c8484; */
+    font-weight: 700;
+    width: 263px;
+    height: 32px;
+}
+p {
+    margin: 0 0 10px;
+}
+footer a {
+    color: #262b31;
+}
+a {
+    color: #42BFDF;
+    text-decoration: none;
+}
