@@ -13,6 +13,13 @@
     <link rel="icon" href="../images/favicon.ico" />
     <link href="../css/zy-index.css" rel="stylesheet" type="text/css">
     <script src="../public/js/jquery-1.12.4.min.js"></script>
+    <link href="../css/model.css" rel="stylesheet" type="text/css">
+
+
+
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="../public/js/zy-index.js"></script>
+
 
 </head>
 <body>
@@ -46,34 +53,32 @@
                 <li>
                     <a href="photo.html"> 精选专辑 </a>
                 </li>
-                <li class="show-under-collapse-in hidden-md hidden-lg">
-                    <a href="#"> 登录 </a>
-                </li>
-                <li class="show-under-collapse-in hidden-md hidden-lg">
-                    <a href="#"> 注册 </a>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
-                <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="上传照片">
-                    <a href="../view/model.html">
-                        <span aria-hidden="true" class="glyphicon glyphicon-cloud-upload"></span>
+                <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-original-title="上传照片">
+                    <a  href="javascript:void(0)" id="upload">
+                        <span aria-hidden="true"  class="glyphicon glyphicon-cloud-upload " ></span>
                     </a>
                 </li>
-                <li class="nav-link-icon" id="shopping-cart-nav-icon2" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="查看购物车">
-                    <a href="zy-shopping.html"><span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span></a>
+                <li class="nav-link-icon" id="shopping-cart-nav-icon2"  data-original-title="查看购物车">
+                    <a href="zy-shopping.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
                 </li>
                 <li class="nav-link-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="发布需求">
-                    <a href="zy-request.html"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></a>
+                    <a href="zy-request.html">
+                        <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+                    </a>
                 </li>
-                <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="你有0条未读消息">
+                <li class="nav-link-icon top-notice" id="shopping-cart-nav-icon" data-original-title="你有0条未读消息">
                     <a href="zy-information.html">
                         <span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li>
-                <li class="nav-avatar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="我的主页">
+                <li class="nav-avatar" data-toggle="tooltip" data-original-title="我的主页">
                     <p class="navbar-text" id="openUserActionsBarButton">
                         <img alt="1056737150" class="userAvatar avatar24 no-action" src="../images/avatar.jpg">
-                        <i class="fa fa-angle-right"></i>
+                        <span class="glyphicon glyphicon-menu-right"></span>
                     </p>
                 </li>
             </ul>
@@ -87,6 +92,119 @@
     </div>
 </nav>
 
+//弹出框
+<div class="modal fade in" id="dialogModal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close">
+                    <span aria-hidden="true" id="close">×</span>
+                </button>
+                <h4 class="modal-title" id="dialogTitleLabel">上传照片</h4>
+            </div>
+            <div class="modal-body">
+                <div class="for-dialog-body" style="padding: 1em;">
+                <form id="editPhotoForm" class="form-vertical" action="#" method="post">
+                    <input type="hidden" name="_csrf" >
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="hidden" id="photoform-source_file" >
+                                <div class="request-example-edit-preview">
+                                    <div class="thumbnail-box" style="height: 250px; padding-top: 5px; line-height: 240px;">
+                                        <img id="photoImage" class="img-thumbnail" src="../images/image-600%20(1).png" alt="" style="max-height: 240px;">
+                                        <div class="in-thumbnail-box-process-bar" style="padding: 0px 15px 2px;" id="uploadPhotoButton-progress-bar">
+                                            <div class="uploadify-progress">
+                                                <div class="uploadify-progress-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uploadExampleButtonBox text-center">
+                                        <div class="example-action add"  id="uploadPhotoButton">
+                                            <!--<span class="glyphicon glyphicon-plus"></span>-->
+                                            <!--<img class="jia" src="../images/add.png">-->
+                                        </div>
+                                        <input id="uploadPhotoFile" type="file" name="uploadPhotoFile">
+                                    </div>
+                                </div>
+                                <p class="text-center help-block">请上传不小于800x800px无水印的原创作品</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group required" style="margin-bottom: 0">
+                                    <label class="control-label" style="margin-bottom: 0">版权许可</label>
+                                </div>
+                                <div class="form-group field-photoform-copyright required">
+
+                                    <div class="checkbox">
+                                        <input type="hidden" name="PhotoForm[copyright]" value="0">
+                                        <label>
+                                            <input type="checkbox" id="photoform-copyright"  value="1"> 这是我自己的照片，有权利出售它</label>
+                                    </div>
+
+                                    <div class="help-block"></div>
+                                </div>
+                                <div class="form-group field-photoform-has_portrait">
+                                    <label class="control-label" for="photoform-has_portrait">照片中是否有可识别人像或物品？</label>
+                                    <input type="hidden"  value="">
+                                    <div id="photoform-has_portrait" label="照片中是否有可识别人像或物品？">
+                                        <label class="radio-inline">
+                                            <input type="radio"  value="1"> 有</label>
+                                        <label class="radio-inline">
+                                            <input type="radio"  value="0" > 没有
+                                        </label>
+                                    </div>
+
+                                    <div class="help-block"></div>
+                                </div>
+                                <div class="form-group field-photoform-portrait_copyright" style="display: none;">
+
+                                    <div class="checkbox">
+                                        <input type="hidden"  value="0">
+                                        <label><input type="checkbox" id="photoform-portrait_copyright"  value="1"> 我已取得他（她）对照片的授权</label>
+                                    </div>
+
+                                    <div class="help-block"></div>
+                                </div>
+
+                                <div class="form-group field-photoform-title required">
+                                    <label class="control-label" for="photoform-title">照片主题</label><br/>
+                                    <input type="text" id="photoform-title" class="form-control" style="height: 50px"  placeholder="照片主题">
+
+                                    <div class="help-block"></div>
+                                </div>
+                                <div class="form-group field-photoform-description">
+                                    <label class="control-label" for="photoform-description">内容简介</label><br/>
+                                    <textarea id="photoform-description" class="form-control" style="height: 50px" placeholder="亲爱的，如果照片有具体的拍摄地请加上哦，这样有利于买家更好的了解照片信息"></textarea>
+
+                                    <div class="help-block"></div>
+                                </div>
+                                <div class="form-group field-photoform-tags">
+                                    <!--<label class="hidden control-label" for="photoform-tags">标签</label>-->
+                                    <!--<input type="hidden" name="PhotoForm[tags]" value="">-->
+
+                                    <select id="photoform-tags" class="form-control"size="1" style="display: none;"></select>
+                                    <div class="makeDropdown-element">
+                                        <button class="btn btn-default btn-sm" type="button">+关键字</button>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="help-block"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+            <div class="modal-footer"><div class="for-dialog-footer">
+                <div class="text-center">
+                    <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default"  type="button">保存</button>
+                </div>
+
+            </div></div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -102,17 +220,18 @@
                 <div class="col-md-12">
                     <img id="userAvatarImage" class="userAvatar avatar120-grey no-action" src="../images/avatar.jpg" alt="1056737150">
                     <div class="text-center photographer-name">
-                        1056737150            </div>
+                        1056737150
+                    </div>
                     <div class="text-center photographer-info">
                         <span class="setting-level-icon small level-1"></span>
-                        探索者                <span style="padding-left: 1em;">积分 0</span>
+                        探索者<span style="padding-left: 1em;">积分 0</span>
                     </div>
                     <div class="text-center photographer-info">
                         <p class="margin-top-10">
                         </p>
                     </div>
                     <div class="text-center photographer-action">
-                        <a href="/user/edit-profile" style="width: 100px;" class="btn btn-default btn-sm"> 编辑</a>
+                        <a href="#" style="width: 100px;" class="btn btn-default btn-sm"> 编辑</a>
                     </div>
                     <!--分享-->
                     <div class="third-party share-links">
@@ -151,17 +270,18 @@
 
         <div id="user_info_box">
             <div class="hidden">
-                <form id="w0" action="/account/1056737150" method="GET" data-pjax="1">	<input id="search-model" name="search-model" value="p">
-                    <input id="photofilter-status" type="hidden" name="PhotoFilter[status]" value="">
-                    <input id="userfilter-myFollows" type="hidden" name="UserFilter[myFollows]" value="">
+                <form id="w0" action="#" method="GET">
+                    <input id="search-model" name="search-model" value="p">
+                    <input id="photofilter-status" type="hidden"  value="">
+                    <input id="userfilter-myFollows" type="hidden"  value="">
                 </form></div>
             <ul class="nav nav-tabs nav-tabs-centered" role="tablist">
                 <li class="active">
-                    <a href="/account/1056737150" aria-controls="" role="tab">
+                    <a href="#" aria-controls="" role="tab">
                         全部照片 0        </a>
                 </li>
                 <li class="">
-                    <a href="/account/1056737150/advanced-sell" aria-controls="3" role="tab">
+                    <a href="#" aria-controls="3" role="tab">
                         高级销售 0        </a>
                 </li>
                 <!--    <li class="">
@@ -169,55 +289,35 @@
                             售出的照片 0        </a>
                     </li>-->
                 <li class="">
-                    <a href="/account/1056737150/nominate" aria-controls="n" role="tab">
+                    <a href="#" aria-controls="n" role="tab">
                         已提名 0        </a>
                 </li>
                 <li class="">
-                    <a href="/account/1056737150/praises" aria-controls="praises" role="tab">
+                    <a href="#" aria-controls="praises" role="tab">
                         获赞照片 0        </a>
                 </li>
                 <li class="">
-                    <a href="/account/1056737150/collect" aria-controls="collect" role="tab">
+                    <a href="#" aria-controls="collect" role="tab">
                         收藏照片 0        </a>
                 </li>
                 <li class="">
-                    <a href="/account/1056737150/follow" aria-controls="0" role="tab">
+                    <a href="#" aria-controls="0" role="tab">
                         我关注 0 人        </a>
                 </li>
                 <li class="">
-                    <a href="/account/1056737150/followed" aria-controls="1" role="tab">
+                    <a href="#" aria-controls="1" role="tab">
                         关注我的 0 人        </a>
                 </li>
             </ul>
             <div class="row" style="padding-top: 20px;">
                 <div class="col-sm-12">
-                    <div id="w1" class="list-view"><div class="empty"></div></div>        </div>
+                    <div id="w1" class="list-view">
+                        <div class="empty"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <script type="text/javascript">
-            function initUserPhotos() {
-                $('div.user-list .user-photos img').click(function(){
-                    if($('div.user-list .user-photos img.loading').length > 0) return;
-                    var self = $(this);
-                    $(this).addClass('loading');
-                    $.get('photo/view/photo/' + $(this).attr('item-id') + '-' + $(this).attr('item-name'), function(response){
-                        self.removeClass('loading');
-                        $.popupModal(response);
-                    });
-                });
-            }
-            $(document).ready(function(){
-                initPhotoList();
-                initUserPhotos();
-                $("#user_info_box").on("pjax:end", function(){
-                    try {
-                        initPhotoList();
-                        initUserPhotos();
-                    } catch(e) {}
-                });
-            });
-        </script>
         <div id="flashMessagesBox"></div>
     </div>
 </div>
@@ -284,6 +384,4 @@
         </div>
     </div>
 </footer>
-
-
-
+</body>

@@ -111,5 +111,35 @@ $(function () {
 
 
 
+//图片轮换
+var timer;//定时器
+var index=0;
+
+function show(id){
+    if(Number(id)){
+        //清除定时器
+        clearInterval(timer);
+        index=id;
+
+    }else{
+        //网页加载之后就执行的
+        //判断index
+        index=index%5+1;
+
+    }
+    //设置图片
+    document.getElementById("pic").setAttribute("src","../images/pic_"+index+".jpg");
+}
+
+show();
+timer=window.setInterval("show()",3000);
+
+function start(){
+    timer=window.setInterval("show()",3000);
+}
+
+
+
+
 
 

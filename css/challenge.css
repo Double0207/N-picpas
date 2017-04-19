@@ -111,8 +111,8 @@ h2{
     width: 1300px;
     height: 43px;
     padding: 0 15px;
-    margin: 0 89px;
-    position: relative;
+    /*margin: 0 89px;*/
+    /*position: relative;*/
 }
 .search-bar{
     width: 1300px;
@@ -241,6 +241,10 @@ li {
     /*margin: 40px 0px 20px 0px;*/
     text-align: center;
 }
+.content-top-center{
+    position: relative;
+    top:-150px;
+}
 .grid-wrapper{
     min-height: 100px;
 }
@@ -308,15 +312,12 @@ a {
     font-weight: 200;
     position: absolute;
    margin-left: 0;
-
     bottom: 105px;
     line-height: 1.1em;
     padding: 0 22px;
     color: #fff;
 }
-.fa-clock-o:before {
-    content: "\f017";
-}
+
 .request-time{
     float: left;
     font-weight: 700;
@@ -328,9 +329,10 @@ a {
     width: auto;
     text-align: left;
 }
-.fa {
+.glyphicon-time{
+    width: 10px;
+    height: 13px;
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
@@ -349,11 +351,11 @@ a {
     color: rgba(255,255,255,.6);
 }
 .request-stats-right {
-    width: 34px;
+    width: 55px;
     height: 18px;
     position: relative;
     float: right;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0 0 0 10px;
 }
 .sw-card-request-chin {

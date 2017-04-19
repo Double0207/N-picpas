@@ -3,7 +3,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-image: url("../images/pic_2.jpg");
+    /*background-image: url("../images/pic_2.jpg");*/
 }
 .modal-open .modal {
     overflow-x: hidden;
@@ -11,7 +11,6 @@ body {
 }
 
 .fade.in {
-    /*height:416px;*/
     opacity: 1;
 }
 .modal{
@@ -26,22 +25,18 @@ body {
     z-index: 1050;
     outline: 0;
 }
-
-
 .fade{
     transition: opacity .15s linear;
 }
 
 .modal.in .modal-dialog{
     transform: translate(0, 0);
+    position: relative;
+    margin: 30px auto;
 }
 .modal-lg {
     width: 900px;
     height: 500px;
-}
-.modal-dialog {
-    position: relative;
-    margin: 30px auto;
 }
 .modal-content{
     width: 898px;
@@ -195,26 +190,30 @@ input{
     width: 100%;
     height: calc(100%);
 }
-.uploadExampleButtonBox .example-action i.fa {
-    position: absolute;
-    top: calc(50% - 14px);
-    left: calc(50% - 10px);
-}
-.fa-2x {
-    width:21px ;
-    height:28px ;
-    font-size: 2em;
-}
+/*.uploadExampleButtonBox .example-action span.glyphicon {*/
+/*position: absolute;*/
+/*top: calc(50% - 14px);*/
+/*left: calc(50% - 10px);*/
+/*}*/
 
+/*.modal-body .glyphicon{*/
+/*width:22px ;*/
+/*height:28px ;*/
+/*font-size: 2em;*/
+/*display: inline-block;*/
+/*font-size: inherit;*/
+/*text-rendering: auto;*/
+/*-webkit-font-smoothing: antialiased;*/
+/*-moz-osx-font-smoothing: grayscale;*/
+/*}*/
 
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/*img .jia{*/
+    /*position: absolute;*/
+    /*top:111px;*/
+    /*bottom: 111px;*/
+    /*left:178px;*/
+    /*right: 176px;*/
+/*}*/
 
 input[type=file] {
     cursor: pointer;
@@ -270,7 +269,7 @@ label {
 }
 .form-control, input[type=text], input[type=email], input[type=password], input[type=select], textarea {
     width: 356px;
-    height: 50px;
+    /*height: 50px;*/
     margin: 0;
     padding: 0 10px;
     background: #ffffff;
@@ -317,6 +316,7 @@ input #photoform-title{
 }
 #submitPhotoForm{
     height: 37px;
+    margin-left: 100px;
 }
 
 
