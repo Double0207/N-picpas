@@ -53,10 +53,19 @@
                 <li>
                     <a href="album.html"> 精选专辑 </a>
                 </li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">我的主页</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">查看购物车</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">我的照片</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">我发布的需求</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">我关注的需求</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">我的消息箱</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">更改密码</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">个人资料</a></li>
+                <li class="show-under-collapse-in hidden-md hidden-lg"><a href="">退出登录</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hide-under-collapse-in">
                 <li class="nav-link-icon" id="shopping-cart-nav-icon1" data-original-title="上传照片">
-                    <a  href="javascript:void(0)" id="upload">
+                    <a  onclick="showdialogModal()"id="upload">
                         <span aria-hidden="true"  class="glyphicon glyphicon-cloud-upload " ></span>
                     </a>
                 </li>
@@ -97,7 +106,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close">
+                <button type="button" class="close" onclick="closedialogModal();">
                     <span aria-hidden="true" id="close">×</span>
                 </button>
                 <h4 class="modal-title" id="dialogTitleLabel">上传照片</h4>
@@ -196,7 +205,8 @@
                 </form>
             </div>
             </div>
-            <div class="modal-footer"><div class="for-dialog-footer">
+            <div class="modal-footer">
+                <div class="for-dialog-footer">
                 <div class="text-center">
                     <button id="submitPhotoForm" style="width: 200px;" class="btn btn-default"  type="button">保存</button>
                 </div>
@@ -330,33 +340,33 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p class="title">网站简介</p>
-                        <p><a href="page/about-us">关于我们</a></p>
-                        <p><a href="page/rf-photos">免版税照片（RF）</a></p>
-                        <p><a href="page/contact-us">联系我们</a></p>
-                        <p><a href="page/faqs">F.A.Q</a></p>
+                        <p><a href="terms.html">关于我们</a></p>
+                        <p><a href="#">免版税照片（RF）</a></p>
+                        <p><a href="#">联系我们</a></p>
+                        <p><a href="#">F.A.Q</a></p>
                     </div>
                     <div class="col-md-6">
                         <p class="title">买家攻略</p>
-                        <p><a href="page/buyer-requirement-and-challenge">需求和挑战</a></p>
-                        <p><a href="page/buyer-how-to-buy-a-photo">怎样买到满意的照片</a></p>
-                        <p><a href="page/buyer-price">照片的价格</a></p>
-                        <p><a href="page/buyer-size-and-uses">尺寸用途的建议</a></p>
-                        <p><a href="page/faqs">了解更多</a></p>
+                        <p><a href="#">需求和挑战</a></p>
+                        <p><a href="#">怎样买到满意的照片</a></p>
+                        <p><a href="#">照片的价格</a></p>
+                        <p><a href="#">尺寸用途的建议</a></p>
+                        <p><a href="#">了解更多</a></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <p class="title">服务条款</p>
-                        <p><a href="page/user-condition">使用条款</a></p>
-                        <p><a href="page/copyright-condition">照片使用许可协议</a></p>
-                        <p><a href="page/secrecy-condition">隐私政策</a></p>
+                        <p><a href="#">使用条款</a></p>
+                        <p><a href="#">照片使用许可协议</a></p>
+                        <p><a href="#">隐私政策</a></p>
                     </div>
                     <div class="col-md-6">
                         <p class="title">摄影师攻略</p>
-                        <p><a href="page/seller-bonus">Picpas入门</a></p>
-                        <p><a href="page/seller-price-condition">等级及佣金</a></p>
-                        <p><a href="page/seller-advance-market">什么是高级市场</a></p>
-                        <p><a href="page/faqs">了解更多</a></p>
+                        <p><a href="#">Picpas入门</a></p>
+                        <p><a href="#">等级及佣金</a></p>
+                        <p><a href="#">什么是高级市场</a></p>
+                        <p><a href="#">了解更多</a></p>
                     </div>
                 </div>
             </div>

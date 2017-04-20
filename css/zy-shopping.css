@@ -9,7 +9,7 @@ div {
 }
 body {
     font-size: 14px;
-    height: 1425px;
+    height: auto;
     margin: 0;
     overflow-x: hidden;
     background-position: center top;
