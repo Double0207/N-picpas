@@ -5,7 +5,7 @@
 
 // var showdialogModal;
 // var closedialogModal;
-//上传照片
+//上传照片弹框
 function showdialogModal() {
     document.getElementById("dialogModal").style.display="block";
 }

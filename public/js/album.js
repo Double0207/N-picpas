@@ -2,7 +2,7 @@
 /**
  * Created by Administrator on 2017/4/17.
  */
-
+//
 var $regist=$(".regist");
 var $logining=$(".logining");
 
@@ -22,6 +22,4 @@ $(".denglu").eq(0).on("click",function(){
 $(".login-close").eq(0).on("click",function(){
     $logining.hide();
 })
-
-
 
