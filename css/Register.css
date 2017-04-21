@@ -6,7 +6,7 @@
     position:relative;
     width:40%;
     background:#dff0d8;
-    color:#3c763d;
+    color:cornflowerblue;
     margin: 0;
     position: fixed;
     right: 10%;
@@ -46,9 +46,9 @@ ul{
     width:60px;
     font-size:15px;
     color:#CCC;
-    border:2px solid #093;
+    border:2px solid #099;
     border-radius:20px;
-    background:#093
+    background:#099;
 }
 .Registerhead_2 .Registerhead_2_2:hover{
     background:none;
@@ -60,9 +60,9 @@ ul{
     width:60px;
     font-size:15px;
     color:#CCC;
-    border:2px solid #f0ad4e;
+    border:2px solid dodgerblue;
     border-radius:20px;
-    background:#f0ad4e;
+    background:dodgerblue;
 }
 .Registerhead_2 .Registerhead_2_2_1:hover{
     background:none;
@@ -76,10 +76,10 @@ ul{
 .Registerhead_2 .Registerhead_2_3{
     width:30px;
     height:30px;
-    border:2px solid #093;
+    border:2px solid dodgerblue;
     margin-top:15px;
     border-radius:50%;
-    color:#090;
+    color:dodgerblue;
     font-size:20px;
     font-weight:bolder;
     text-align:center;}
@@ -105,7 +105,8 @@ ul{
     padding-left:12px;
     padding-right:10px;
     border:none;
-    border-radius:7px 7px 0px 0px;}
+    border-radius:7px;
+}
 .input_1_2{
     width:250px;
     height:34px;
@@ -125,7 +126,7 @@ ul{
     font-size:14px;
     font-weight:bold;
     padding-left:12px;
-    background:#47a812;
+    background:dodgerblue;
     padding-right:10px;
     border:none;}
 .input_1_3_1{
@@ -141,11 +142,11 @@ ul{
     padding-right:10px;
     border:none;}
 .input_1_3:hover{
-    background:#5ad617;
+    background:cornflowerblue;
     cursor:pointer
 }
 .input_1_3:active{
-    background:#47a812;
+    background:dodgerblue;
 }
 
 .input3{
@@ -169,6 +170,7 @@ ul{
     border:none;
     border-radius:5px 0px 0px 5px}
 .input2{
+    margin-top: 20px;
     width:380px;
     height:34px;
     color:#555;
@@ -178,7 +180,7 @@ ul{
     padding-right:10px;
     border:none;
     border-top:1px solid #CCC;
-    border-radius:0px 0px 7px 7px;
+    border-radius:7px;
     position:relative;
     top:-1px;}
 .Registerbody_2 .choice li{
@@ -191,7 +193,8 @@ ul{
     font-size:14px}
 .Registerbody_2 .choice li:hover{
     background:#FFF;
-    color:#47a812}
+    color:cornflowerblue
+}
 .choice{
     position:relative;
     left:15px;
@@ -226,13 +229,13 @@ ul{
     cursor:pointer}
 .Registerbody_2_2{
     margin-top:10px;
-    color:#47a812;
+    color:dodgerblue;
     font-size:14px}
 .Registerbody_2_2 a{
-    color:#47a812;
+    color:dodgerblue;
     text-decoration:none}
 .Registerbody_2_2 a:hover{
-    color:#5ad617}
+    color:cornflowerblue}
 .Registerbody_2_2_1{
     margin-top:-5px;
     padding-bottom:15px;
@@ -253,22 +256,22 @@ ul{
     left:15px;
     height:35px;
     font-size:14px;
-    background:#47a812;
+    background:dodgerblue;
     border-radius:30px;
     color:#FFF}
 .Registerbody_2_3 .Registerbody_2_3_1:hover{
-    background:#5ad617;
+    background:cornflowerblue;
     cursor:pointer}
 .Registerbody_2_3 .Registerbody_2_3_2{
     padding-right:15px;
     text-align:right;
-    color:#47a812;
+    color:dodgerblue;
     font-size:14px}
 .Registerbody_2_3 .Registerbody_2_3_2 a{
-    color:#47a812;
+    color:dodgerblue;
     text-decoration:none}
 .Registerbody_2_3 .Registerbody_2_3_2 a:hover{
-    color:#5ad617;}
+    color:cornflowerblue;}
 #Registerbody ul{
     width:420px;
     text-align:center;}

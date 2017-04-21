@@ -73,11 +73,11 @@ function lcheckmail(){
     var mail=$(".input1").val();
     if(mail==""){
         document.getElementById("checkmail").style.paddingBottom=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不能为空</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不能为空</font>")
         RegisterYN1=1;
     }else if(regmail(mail)){
         document.getElementById("checkmail").style.paddingBottom=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不是有效的邮箱地址。</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不是有效的邮箱地址。</font>")
         RegisterYN1=1;
     }else{
         document.getElementById("checkmail").style.paddingBottom=0+"px"
@@ -90,11 +90,11 @@ function lcheckmail1_1(){
     var mail=$(".input1").val();
     if(mail==""){
         document.getElementById("checkmail").style.paddingBottom=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不能为空</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不能为空</font>")
         RegisterYN1=1;
     }else if(regmail(mail)){
         document.getElementById("checkmail").style.paddingBottom=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不是有效的邮箱地址。</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不是有效的邮箱地址。</font>")
         RegisterYN1=1;
     }else{
         document.getElementById("checkmail").style.paddingBottom=0+"px"
@@ -107,11 +107,11 @@ function lcheckpwd(){
     var pwd=$(".input2").val();
     if(pwd==""){
         document.getElementById("checkpwd").style.paddingTop=10+"px"
-        $("#checkpwd").html("<font color='#a94442'>登陆密码不能为空</font>")
+        $("#checkpwd").html("<font color='#1e90ff'>登陆密码不能为空</font>")
         RegisterYN2=1;
     }else if(pwd.length<8){
         document.getElementById("checkpwd").style.paddingTop=10+"px"
-        $("#checkpwd").html("<font color='#a94442'>登陆密码应该包含至少8个字符</font>")
+        $("#checkpwd").html("<font color='#1e90ff'>登陆密码应该包含至少8个字符</font>")
         RegisterYN2=1;
     }else{
         document.getElementById("checkpwd").style.paddingTop=0+"px"
@@ -148,7 +148,7 @@ function getcustcode(){
                 $("#checkmail").html("<input type='hidden' id='bj' value='0'/>")
             }else{
                 document.getElementById("checkmail").style.paddingBottom=10+"px"
-                $("#checkmail").html("<font color='#a94442'>改邮箱已被注册<input type='hidden' id='bj' value='1'/></font>")
+                $("#checkmail").html("<font color='#1e90ff'>改邮箱已被注册<input type='hidden' id='bj' value='1'/></font>")
                 lheight();
             }
         }
@@ -158,7 +158,7 @@ function getcustcode(){
 function checkboxyn(){
     alert("1223")
     if(($(".Registerbody_2_2 input").get(0).checked.toString())=="false"){
-        $("#checkboxyn").html("<font color='#a94442'>必须同意该条款才能使用本站提供的服务。</font>");
+        $("#checkboxyn").html("<font color='#1e90ff'>必须同意该条款才能使用本站提供的服务。</font>");
         RegisterYN3=1;
     }else{
         $("#checkboxyn").html("");
@@ -225,17 +225,17 @@ var forgetpwd1=1;
 var forgetpwd2=1;
 function lcheckmail1(val){
     if(val==""){
-        document.getElementsByClassName("lpass").item(0).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(0).style.color="#1e90ff"
         document.getElementById("checkmail").style.paddingTop=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不能为空</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不能为空</font>")
         forgetpwd1=1;
     }else if(regmail(val)){
-        document.getElementsByClassName("lpass").item(0).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(0).style.color="#1e90ff"
         document.getElementById("checkmail").style.paddingTop=10+"px"
-        $("#checkmail").html("<font color='#a94442'>邮箱地址不是有效的邮箱地址。</font>")
+        $("#checkmail").html("<font color='#1e90ff'>邮箱地址不是有效的邮箱地址。</font>")
         forgetpwd1=1;
     }else{
-        document.getElementsByClassName("lpass").item(0).style.color="#47a812"
+        document.getElementsByClassName("lpass").item(0).style.color="dodgerblue"
         document.getElementById("checkmail").style.paddingTop=0+"px"
         $("#checkmail").html("")
         forgetpwd1=0;
@@ -244,9 +244,9 @@ function lcheckmail1(val){
 }
 function lcheckcode(val){
     if(val==""){
-        document.getElementsByClassName("lpass").item(1).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(1).style.color="#1e90ff"
         document.getElementById("checkpwd").style.paddingTop=10+"px"
-        $("#checkpwd").html("<font color='#a94442'>验证码不能为空</font>")
+        $("#checkpwd").html("<font color='#1e90ff'>验证码不能为空</font>")
         forgetpwd2=1;
     }else{
         $.ajax({
@@ -256,15 +256,15 @@ function lcheckcode(val){
             dataType:"JSON",
             success: function(data){
                 if(data.code==1){
-                    document.getElementsByClassName("lpass").item(1).style.color="#47a812"
+                    document.getElementsByClassName("lpass").item(1).style.color="dodgerblue"
                     document.getElementById("checkpwd").style.paddingTop=0+"px"
                     $("#checkpwd").html("")
                     forgetpwd2=0;
                     lheight();
                 }else if(data.code==0){
-                    document.getElementsByClassName("lpass").item(1).style.color="#a94442"
+                    document.getElementsByClassName("lpass").item(1).style.color="#1e90ff"
                     document.getElementById("checkpwd").style.paddingTop=10+"px"
-                    $("#checkpwd").html("<font color='#a94442'>验证码不正确</font>")
+                    $("#checkpwd").html("<font color='#1e90ff'>验证码不正确</font>")
                     forgetpwd2=1;
                     lheight();
                 }
@@ -291,9 +291,9 @@ function forgetpwd(){
                 if(data.code==1){
                     regts("邮件已发送")
                 }else{
-                    document.getElementsByClassName("lpass").item(0).style.color="#a94442"
+                    document.getElementsByClassName("lpass").item(0).style.color="#1e90ff"
                     document.getElementById("checkmail").style.paddingTop=10+"px"
-                    $("#checkmail").html("<font color='#a94442'>邮箱地址是无效的</font>")
+                    $("#checkmail").html("<font color='#1e90ff'>邮箱地址是无效的</font>")
                     forgetpwd1=1;
                     lheight();
                 }
@@ -309,17 +309,17 @@ var changepwd1_1val="";
 function changepwd1_1(val){
     changepwd1_1val=val;
     if(val==""){
-        document.getElementsByClassName("lpass").item(0).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(0).style.color="#1e90ff"
         document.getElementById("checkpwd").style.paddingTop=10+"px"
-        $("#checkpwd").html("<font color='#a94442'>登陆密码不能为空</font>")
+        $("#checkpwd").html("<font color='#1e90ff'>登陆密码不能为空</font>")
         hcp1=1;
     }else if(val.length<8){
-        document.getElementsByClassName("lpass").item(0).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(0).style.color="#1e90ff"
         document.getElementById("checkpwd").style.paddingTop=10+"px"
-        $("#checkpwd").html("<font color='#a94442'>登陆密码应该包含至少8个字符</font>")
+        $("#checkpwd").html("<font color='#1e90ff'>登陆密码应该包含至少8个字符</font>")
         hcp1=1;
     }else{
-        document.getElementsByClassName("lpass").item(0).style.color="#47a812"
+        document.getElementsByClassName("lpass").item(0).style.color="dodgerblue"
         document.getElementById("checkpwd").style.paddingTop=0+"px"
         $("#checkpwd").html("")
         hcp1=0;
@@ -328,25 +328,25 @@ function changepwd1_1(val){
 }
 function changepwd1_2(val){
     if(val==""){
-        document.getElementsByClassName("lpass").item(1).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(1).style.color="#1e90ff"
         document.getElementById("checkpwd1").style.paddingTop=10+"px"
         $("#checkpwd1").html("<font color='#a94442'>重复密码不能为空</font>")
         hcp2=1;
     }else if(val.length<8){
-        document.getElementsByClassName("lpass").item(1).style.color="#a94442"
+        document.getElementsByClassName("lpass").item(1).style.color="#1e90ff"
         document.getElementById("checkpwd1").style.paddingTop=10+"px"
-        $("#checkpwd1").html("<font color='#a94442'>重复密码应该包含至少8个字符</font>")
+        $("#checkpwd1").html("<font color='#1e90ff'>重复密码应该包含至少8个字符</font>")
         hcp2=1;
     }else{
         if(changepwd1_1val==val){
-            document.getElementsByClassName("lpass").item(1).style.color="#47a812"
+            document.getElementsByClassName("lpass").item(1).style.color="dodgerblue"
             document.getElementById("checkpwd1").style.paddingTop=0+"px"
             $("#checkpwd1").html("")
             hcp2=0
         }else{
-            document.getElementsByClassName("lpass").item(1).style.color="#a94442"
+            document.getElementsByClassName("lpass").item(1).style.color="#1e90ff"
             document.getElementById("checkpwd1").style.paddingTop=10+"px"
-            $("#checkpwd1").html("<font color='#a94442'>两次输入密码不同</font>")
+            $("#checkpwd1").html("<font color='#1e90ff'>两次输入密码不同</font>")
             hcp2=1;
         }
     }
