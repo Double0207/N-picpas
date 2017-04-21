@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+.g_addCartDialog,.g_addCartDialog_mine{
+    display:none;
+    padding:10px 0;
+    position:relative;
+    width:40%;
+    background:#dff0d8;
+    color:#3c763d;
+    margin: 0;
+    position: fixed;
+    right: 10%;
+    top: 20%;
+    border-radius:7px;
+    z-index:10001;}
+.g_addCartDialog_close{
+    background:#dff0d8 none repeat scroll 0 0;
+    border:0;
+    cursor:pointer;
+    color:inherit;
+    font-size:18px;
+    position:relative;
+    left:95%;}
+#lmenubody{
+    display:none}
+#lmenubody a{
+    text-decoration:none;
+    color:#FFF}
+#lmenubody ul{
+    position:relative;
+    right:170px;
+    text-align:right;
+    width:350px;
+    line-height:30px;
+    height:30px;
+    font-size:14px;
+    color:#FFF;}
+
+#changepwdbody{
+    width:100%;
+    height:auto;
+    line-height:100%;
+    background:url(../images/page-index-signup.jpg);
+    background-size:2400px 1600px;
+    background-position:center top;}
+#pwd{
+    width:420px;
+    border:1px solid #FFF;
+    background:#000;
+    background:rgba(0,0,0,0.4);}
+.pwdbody{
+    width:390px;
+    margin:10px 15px 10px 15px;}
+.pwdbody ul{
+    width:100%}
+.lpwd{
+    color:#FFF;
+    font-size:14px;
+    padding-bottom:15px;}
+.pwdbody span{
+    color:#a94442;
+    position:relative;
+    top:3px;
+    left:2px}
+.input{
+    width:95%;
+    height:34px;
+    border-radius:5px;
+    border:none;
+    padding-left:10px;
+    padding-right:10px;
+    margin-bottom:10px}
+.lpwd4{
+    margin-top:10px;
+    width:45%;
+    float:left;
+    line-height:35px;
+    text-align:center;
+    height:35px;
+    font-size:14px;
+    background:#47a812;
+    border-radius:30px;
+    color:#FFF}
+.lpwd4:hover{
+    background:#5ad617;
+    cursor:pointer}

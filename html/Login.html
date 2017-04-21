@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/Register.css">
+    <script src="../public/js/jquery-1.11.3.js"></script>
+    <script src="../public/js/Register.js"></script>
+</head>
+<body style="background:url(../images/page-index-login.jpg); background-size:1400px 700px; background-position:center top">
+<div id="Registerhead">
+    <div class="Registerhead_2">
+        <ul class="Registerhead_2_2_1"><a href="Register.html">注册</a></ul>
+        <ul class="Registerhead_2_3"><a href="index.html"  onMouseOver="lchange(1)" onMouseOut="lchange(2)"><img src="../images/zhuye1.png" width="20px"/></a></ul>
+    </div>
+</div>
+<div id="Registerbody">
+    <div class="Registerbody_1"></div>
+    <div class="Registerbody_2">
+        <ul><img src="../images/logo-white-signup-68x45.png"/></ul>
+        <ul class="Registerbody_2_1">
+            <div id="checkmail" style="text-align:left; padding-left:15px;"></div>
+            <input type="text" placeholder="邮箱地址" class="input1" onBlur="lcheckmail()" value=""/>
+            <input type="password" placeholder="登陆密码" class="input2" onBlur="lcheckpwd()" value=""/>
+            <div id="checkpwd" style="text-align:left; padding-left:15px;"></div>
+        </ul>
+        <ul class="Registerbody_2_2_1" style="text-align:left; position:relative; left:15px">
+            <input type="checkbox" title="可记住7天"/>&nbsp;&nbsp;记住我
+        </ul>
+        <ul class="Registerbody_2_3">
+            <li class="Registerbody_2_3_1" onClick="CustLogin()">登录</li>
+            <li style="float:right" class="Registerbody_2_3_2">
+                <a href="Register.html">立即免费注册</a><br/>
+                <a href="forgot-password.html">忘记密码</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="g_addCartDialog" style="top:28%;color:#0c8484;;right:35.5%;width:400px">
+    <button class="g_addCartDialog_close">
+        <span>×</span>
+    </button>
+    <font></font>
+</div>
+<div id="Registerbottom">
+    <div class="Registerbottom_1">
+        <ul>
+            <li><span class="Registerbottom_2">PicPas是一个拍照需求和照片分享社区，针对各个层级的摄影师，致力于提供一流的服务。</span>
+                <span class="Registerbottom_3">陕 ICP备 15003746-1</span></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
