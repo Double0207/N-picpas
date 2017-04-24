@@ -33,6 +33,18 @@ function imglocation(){
         }
     });
 }
+/*弹框事件*/
+var pg=1;
+$(".zhuanji-button").click(function(){
+    if(pg==1){
+        $(".page-login-bottom").show();
+        pg=2;
+    }else{
+        $(".page-login-bottom").hide();
+        pg=1;
+    }
+
+})
 
 /*图片移入移出事件*/
 var $box_top=$(".box-top");

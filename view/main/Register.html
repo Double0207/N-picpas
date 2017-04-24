@@ -2,27 +2,27 @@
 <head>
     <meta charset="utf-8">
     <title>注册</title>
-    <link rel="stylesheet" href="../css/Register.css">
-    <script src="../public/js/jquery-1.11.3.js"></script>
-    <script src="../public/js/Register.js"></script>
+    <link rel="stylesheet" href="../../css/Register.css">
+    <script src="../../public/js/jquery-1.11.3.js"></script>
+    <script src="../../public/js/Register.js"></script>
 
 </head>
-<body style="background:url(../images/page-index-login.jpg); background-size:1400px 700px; background-position:center top">
+<body style="background:url(../../images/page-index-login.jpg); background-size:1400px 700px; background-position:center top">
 <div id="Registerhead">
     <div class="Registerhead_2">
         <ul class="Registerhead_2_2"><a href="Login.html">登录</a></ul>
-        <ul class="Registerhead_2_3"><a href="index.html"  onMouseOver="lchange(1)" onMouseOut="lchange(2)"><img src="../images/zhuye1.png" width="20px"/></a></ul>
+        <ul class="Registerhead_2_3"><a href="index.html" onMouseOver="lchange(1)" onMouseOut="lchange(2)"><img src="../../images/zhuye1.png" width="20px"/></a></ul>
     </div>
 </div>
 <div id="Registerbody">
     <div class="Registerbody_1"></div>
     <div class="Registerbody_2">
-        <ul><img src="../images/logo-white-signup-68x45.png"/></ul>
-        <ul class="Registerbody_2_1">
+        <ul><img src="../../images/logo-white-signup-68x45.png"/></ul>
+        <ul class="Registerbody_2_1" id="register">
             <div id="checkmail" style="text-align:left; padding-left:15px;"></div>
-            <input type="text" placeholder="邮箱地址" class="input1" onBlur="lcheckmail1_1()"/>
+            <input type="text" name="emial" placeholder="邮箱地址" class="input1" onBlur="lcheckmail1_1()"/>
             <!-- <input type="text" placeholder="邮箱验证" class="input_1_2"/><input type="button" class="input_1_3" id="input_1_3" onclick="getcustcode()" value="发送验证码"/> -->
-            <input type="password" placeholder="登陆密码码" class="input2" onBlur="lcheckpwd()"/>
+            <input type="password" name="pwd" placeholder="登陆密码码" class="input2" onBlur="lcheckpwd()"/>
 
             <div id="checkpwd" style="text-align:left; padding-left:15px;"></div>
         </ul>
@@ -33,15 +33,16 @@
         </ul><br/><br/> -->
         <ul class="Registerbody_2_2">
             <input type="checkbox" />
-            <a href="terms.html" target="_blank">我已经仔细阅读、认可并接受《服务条款》中的全部条款。</a>
+            <a href="../../html/terms.html" target="_blank">我已经仔细阅读、认可并接受《服务条款》中的全部条款。</a>
             <div id="checkboxyn" style="text-align:left; padding-left:20px"></div>
         </ul>
         <br />
 
         <ul class="Registerbody_2_3">
             <li class="Registerbody_2_3_1" onclick="checkboxyn()">注册</li>
-            <li style="float:right" class="Registerbody_2_3_2"><a
-                    href="Login.html">已有账号点此登陆</a><br /> <a href="forgot-password.html">忘记密码</a>
+            <li style="float:right" class="Registerbody_2_3_2" id="andl" >
+                <a href="/reg" name="de_1" style="height: 20px" >已有账号点此登陆</a><br />
+                <a href="forgot-password.html" name="forget">忘记密码</a>
             </li>
         </ul>
     </div>

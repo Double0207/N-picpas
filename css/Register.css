@@ -86,10 +86,12 @@ ul{
 #Registerbody{
     width:420px;
     border:1px solid #FFF;
-    margin-top:50px}
+    margin-top:50px
+}
 .Registerbody_1{
     width:420px;
-    height:auto;
+    /*height:auto!important;*/
+    min-height: 334px;
     background:#000;
     opacity:0.4}
 .Registerbody_2{

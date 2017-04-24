@@ -5,13 +5,13 @@
 }
 /*@media (min-width: 768px)*/
 .navbar-fixed-top, .navbar-fixed-bottom {
-    border-radius: 0;
-}
+        border-radius: 0;
+    }
 .navbar-fixed-top, .navbar-fixed-bottom {
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+        position: fixed;
+        right: 0;
+        left: 0;
+        z-index: 1030;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -28,30 +28,6 @@ body {
     color: #262b31;
     font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
     font-size: 14px;
-}
-img.userAvatar.avatar24 {
-    position: relative;
-    top: 12px;
-    bottom:-2px;
-    width: 24px;
-    height: 24px;
-    border: 2px solid rgba(255,255,255,.5);
-    border-radius: 60px;
-}
-.navbar-text{
-    padding: 0px;
-    margin: 0 3px;
-    margin-right: 0px;
-    color: #ffffff;
-    cursor: pointer;
-}
-ul.navbar-nav > li.nav-avatar .glyphicon-menu-right {
-    margin-left: 21px;
-    vertical-align: middle;
-    font-size: 14px;
-    display: inline-block;
-    position: absolute;
-    top: 15px;
 }
 
 
@@ -107,8 +83,6 @@ ul.navbar-nav > li.nav-avatar .glyphicon-menu-right {
     width: 340px;
     height: 265px;
 }
-
-
 .col-md-4{
     padding: 10px;
     width: 360px;
@@ -118,10 +92,10 @@ ul.navbar-nav > li.nav-avatar .glyphicon-menu-right {
     height: 150px;
 }
 .btn-lg{
-    background-color: #0C8484;
+   background-color: #0C8484;
 }
 /*.viewport-center{*/
-/*height: 400px;*/
+    /*height: 400px;*/
 /*}*/
 .mobile_device{
     background-image: url("../images/phone.png");
@@ -165,14 +139,14 @@ ul.navbar-nav > li.nav-avatar .glyphicon-menu-right {
     min-height: 60px;
 }
 /*.form-group{*/
-/*width: 216px;*/
-/*height: 14px;*/
+    /*width: 216px;*/
+    /*height: 14px;*/
 /*}*/
 /*.form-control{*/
-/*!*width: 174px;*!*/
-/*!*height: 32px;*!*/
-/*!*padding: 0 10px;*!*/
-/*!*border: 2px solid #e9e9e9;*!*/
+    /*!*width: 174px;*!*/
+    /*!*height: 32px;*!*/
+    /*!*padding: 0 10px;*!*/
+    /*!*border: 2px solid #e9e9e9;*!*/
 /*}*/
 .home-bg{
     height: 940px;
@@ -218,7 +192,7 @@ ul.navbar-nav > li.nav-avatar .glyphicon-menu-right {
     position: relative;
 }
 #nav-search-submit{
-    position: absolute;
+   position: absolute;
     right:20px;
     top:12px;
 }
@@ -250,9 +224,9 @@ a {
     text-decoration: none;
 }
 /*p {*/
-/*margin: 0 0 10px;*/
-/*width: 263px;*/
-/*height: 20px;*/
+    /*margin: 0 0 10px;*/
+    /*width: 263px;*/
+    /*height: 20px;*/
 /*}*/
 
 

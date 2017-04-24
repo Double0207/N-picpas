@@ -435,6 +435,32 @@ a {
 }
 
 
+.pagination ul li a{
+    text-decoration: none;
+    width:50px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    color: #0C8484;
+    font-size: 22px;
+    float: left;
+}
+.pagination ul li a:hover{
+    background: #0C8484;
+    color: #FFFFFF;
+}
+.pagination .active{
+    width:50px;
+    height:50px;
+}
+.pagination .last-page{
+    margin:0px 350px 0px 20px;
+}
+.pagination .next-page{
+    margin:0px 0px 0px 350px;
+}
+
+
 
 
 
